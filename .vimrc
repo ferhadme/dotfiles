@@ -21,3 +21,7 @@ hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
 
 highlight Comment ctermfg=green
+
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
