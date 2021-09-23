@@ -44,6 +44,7 @@ sub main {
     if (not -e FILELOC) {
         print FILELOC, " not exists\n";
         print "Be sure you use Asus Gaming laptop and have Kernel version 5.6+\n";
+        exit;
     }
     
     if ($option eq "silent") {
