@@ -2,6 +2,8 @@
 
 =about
 
+Author: Farhad Mehdizada (@ferhadme)
+
 This script is for controlling fan mode of asus gaming laptops on Linux
 
 Be sure you use kernel version 5.6+
