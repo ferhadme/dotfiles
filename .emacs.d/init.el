@@ -6,7 +6,7 @@
  '(column-number-mode nil)
  '(cua-normal-cursor-color "dark gray")
  '(custom-enabled-themes '(manoj-dark))
- '(display-line-numbers t)
+ '(display-line-numbers 'relative)
  '(dynamic-completion-mode nil)
  '(fringe-mode 0 nil (fringe))
  '(global-subword-mode t)
@@ -25,7 +25,7 @@
  '(tool-bar-mode nil))
 
 (custom-set-faces
- '(default ((t (:inherit nil :stipple nil :background "#1d1f28" :foreground "WhiteSmoke" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "CTDB" :family "Fira Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#181818" :foreground "WhiteSmoke" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "CTDB" :family "Fira Mono"))))
  '(cursor ((t (:background "white"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "green"))))
  '(font-lock-comment-face ((t (:foreground "green" :slant oblique))))
@@ -119,3 +119,5 @@
 
 (global-set-key [C-S-left] 'shift-left)
 (global-set-key [C-S-right] 'shift-right)
+
+;;
