@@ -148,3 +148,15 @@ export PATH="$HOME/gems/bin:$PATH"
 
 export PGUSER=$(whoami)
 alias config='/usr/bin/git --git-dir=/home/ferhad/.cfg/ --work-tree=/home/ferhad'
+
+
+introduction() {
+  echo -e "\e[31m    ______           __              __   __  ___     __        ___                 __     "
+  echo "   / ____/___ ______/ /_  ____ _____/ /  /  |/  /__  / /_  ____/ (_)___  ____ _____/ /___ _"
+  echo "  / /_  / __ '/ ___/ __ \/ __ '/ __  /  / /|_/ / _ \/ __ \/ __  / /_  / / __ '/ __  / __ '/"
+  echo " / __/ / /_/ / /  / / / / /_/ / /_/ /  / /  / /  __/ / / / /_/ / / / /_/ /_/ / /_/ / /_/ / "
+  echo "/_/    \__,_/_/  /_/ /_/\__,_/\__,_/  /_/  /_/\___/_/ /_/\__,_/_/ /___/\__,_/\__,_/\__,_/  "
+  echo -e "                                                                                           \e[0m"
+}
+
+introduction
