@@ -159,4 +159,10 @@ print_name() {
   echo -e "                                                                                           \e[0m"
 }
 
-print_name
+intro() {
+    echo
+    echo -e "\e[31m¯\_(ツ)_/¯\e[0m"
+    echo
+}
+
+intro
