@@ -1,4 +1,8 @@
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
@@ -15,7 +19,7 @@
  '(ido-mode 'both nil (ido))
  '(line-number-mode t)
  '(menu-bar-mode nil)
- '(package-selected-packages '(racket-mode))
+ '(package-selected-packages '(multiple-cursors racket-mode))
  '(ps-line-number-color '(244 197 77))
  '(python-indent-guess-indent-offset nil)
  '(python-indent-offset 4)
@@ -25,6 +29,10 @@
  '(tool-bar-mode nil))
 
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#181818" :foreground "WhiteSmoke" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "CTDB" :family "Fira Mono"))))
  '(cursor ((t (:background "white"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "green"))))
@@ -121,3 +129,10 @@
 (global-set-key [C-S-right] 'shift-right)
 
 ;;
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+
