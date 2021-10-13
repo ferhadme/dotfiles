@@ -159,10 +159,14 @@ print_name() {
   echo -e "                                                                                           \e[0m"
 }
 
-intro() {
+intro_em() {
     echo
     echo -e "\e[31m¯\_(ツ)_/¯\e[0m"
     echo
 }
 
-intro
+os_info() {
+	neofetch -L --ascii_distro GNU
+}
+
+os_info
