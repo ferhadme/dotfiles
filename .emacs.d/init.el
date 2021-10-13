@@ -19,7 +19,7 @@
  '(ido-mode 'both nil (ido))
  '(line-number-mode t)
  '(menu-bar-mode nil)
- '(package-selected-packages '(multiple-cursors racket-mode))
+ '(package-selected-packages '(yasnippet-snippets multiple-cursors racket-mode))
  '(ps-line-number-color '(244 197 77))
  '(python-indent-guess-indent-offset nil)
  '(python-indent-offset 4)
@@ -134,5 +134,12 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"
+        ))
+
+(yas-global-mode 1)
+
 
 
