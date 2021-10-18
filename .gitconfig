@@ -1,4 +1,69 @@
 # This is Git's per-user configuration file.
 [user]
-	email = frhdmehdiyev@gmail.com
 	name = ferhadme
+	email = frhdmehdiyev@gmail.com
+	username = ferhadme
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[alias]
+	a = add .
+	###
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	###
+	cl = clone
+	###
+	d = diff
+	###
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	###
+	l = log
+	lg = log --oneline --graph --decorate
+	###
+	m = merge
+	###
+	ch = checkout
+	chm = checkout master
+	chb = checkout -b
+	###
+	ps = push
+	psf = push -f
+	###
+	psom = push origin master
+	psaom = push --all origin master
+	psfom = push -f origin master
+	###
+	pl = pull
+	pbo = pull --rebase origin
+	plom = pull origin master
+	pbom = pull --rebase origin master
+	###
+	plu = pull upstream
+	plum = pull upstream master
+	pbum = pull --rebase upstream master
+	###
+	rb = rebase
+	###
+	re = reset
+	rh = reset head
+	###
+	r = remote
+	ra = remote add
+	rr = remote rm
+	rv = remote -v
+	rn = remote rename
+	rao = remote add origin
+	rau = remote add upstream
+	rro = remote remove origin
+	rru = remote remove upstream
+	###
+	s = status
+	###
+
+
+	
