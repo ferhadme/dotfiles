@@ -1,4 +1,8 @@
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
@@ -26,6 +30,10 @@
  '(tool-bar-mode nil))
 
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#181818" :foreground "WhiteSmoke" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "CTDB" :family "Fira Mono"))))
  '(cursor ((t (:background "white"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "green"))))
@@ -34,12 +42,15 @@
  '(font-lock-keyword-face ((t (:foreground "#e80067"))))
  '(font-lock-preprocessor-face ((t (:foreground "CornFlowerBlue" :slant italic))))
  '(font-lock-type-face ((t (:foreground "#f38c40"))))
+ '(highlight ((t (:background "#a65022" :foreground "#1B2229"))))
  '(line-number ((t (:inherit (shadow default) :foreground "#f3c44d"))))
+ '(mc/region-face ((t (:inherit region :background "black"))))
  '(minibuffer-prompt ((t (:foreground "cyan"))))
  '(mode-line-buffer-id ((t (:background "black" :foreground "#d290c9" :weight bold :height 0.9))))
+ '(mode-line-highlight ((t (:inherit highlight :box (:line-width 2 :color "grey40" :style released-button)))))
  '(org-level-3 ((t (:foreground "chocolate1"))))
  '(org-level-4 ((t (:foreground "Cyan1"))))
- '(region ((t (:background "#48b9c7")))))
+ '(region ((t (:extend t :background "#a65022")))))
 
 (require 'package)
 (add-to-list 'package-archives

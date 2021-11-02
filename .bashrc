@@ -134,7 +134,7 @@ export LSCOLORS=cxgxfxexbxegedabagacad
 # export LD_LIBRARY_PATH=/usr/local/lib
 export PATH=/home/ferhad/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/jdk-16.0.2
-export JAVA_BIN=/usr/lib/jvm/jdk-16.0.2/bin
+export JAVA_BIN=$JAVA_HOME/bin
 export PATH=$JAVA_BIN:$PATH 
 
 export PATH=$PATH:/usr/share/gradle/gradle-7.1.1/bin
