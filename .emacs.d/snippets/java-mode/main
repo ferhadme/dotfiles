@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: main method
+# name: main
 # key: psvm
 # --
 public static void main(String[] args) {

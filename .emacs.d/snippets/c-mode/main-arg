@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: int main(int argc, char **argv) { ... }
+# name: mainarg
 # key: main-arg
 # --
 int main(int argc, char **argv) {

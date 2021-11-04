@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: int main(void) { ... }
+# name: mainvoid
 # key: main-void
 # --
 int main(void)
