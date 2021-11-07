@@ -1,0 +1,9 @@
+source .vimrc
+
+set scrolloff=5
+
+set incsearch
+
+map Q gq
+
+"https://jb.gg/share-ideavimrc
