@@ -3,8 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
+case $- in *i*) ;;
       *) return;;
 esac
 
@@ -120,11 +119,12 @@ if ! shopt -oq posix; then
 fi
 
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ %(\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ git:(\1)/'
 }
 
 export CLICOLOR=1
-export PS1="$(whoami)\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]:\[\e[m\] \[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\]\[\e[3;31m\]\$(parse_git_branch)\[\e[0m\] $ "
+export PS1="$(whoami)\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]: \[\e[m\]\[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\]\[\e[35m\]\$(parse_git_branch)\[\e[0m\] $ "
+# \[\e[3;31m\]
 export LSCOLORS=cxgxfxexbxegedabagacad
 # \e[3;31m
 # \e[0m
@@ -169,4 +169,5 @@ os_info() {
 	neofetch -L --ascii_distro GNU
 }
 
-os_info
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
