@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: mainvoid
-# key: main-void
-# --
-int main(void)
-{
-    $0
-    return 0;
-}
