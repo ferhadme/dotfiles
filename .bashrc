@@ -172,4 +172,5 @@ os_info() {
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
 
-editor=vim
+set -o vi
+
