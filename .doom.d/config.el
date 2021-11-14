@@ -54,3 +54,5 @@
 ;; they are implemented.
 ;;
 ;;
+
+(global-visual-line-mode 1)
