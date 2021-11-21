@@ -172,5 +172,9 @@ os_info() {
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
 
-set -o vi
+set -o emacs
 
+# Chromium API keys are missing warning message
+export GOOGLE_API_KEY="no"
+export GOOGLE_DEFAULT_CLIENT_ID="no"
+export GOOGLE_DEFAULT_CLIENT_SECRET="no"
