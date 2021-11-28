@@ -55,3 +55,6 @@
 ;;
 
 (global-visual-line-mode 1)
+
+(setq shell-file-name "bash")
+(setq shell-command-switch "-ic")
