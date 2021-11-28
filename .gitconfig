@@ -34,6 +34,7 @@
 	ps = push
 	psf = push -f
 	###
+	pso = push origin
 	psom = push origin master
 	psaom = push --all origin master
 	psfom = push -f origin master
