@@ -80,10 +80,6 @@ sub change_fan_mode {
 }
 
 sub status {
-    my %fan_modes = ( SILENT => 'silent',
-                      BALANCE => 'balance',
-                      TURBO => 'turbo' );
-
     open(FILE, '<', FILELOC) or die $!;
     my $current_mode = <FILE>;
     if ($current_mode == SILENT) {

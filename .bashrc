@@ -180,3 +180,4 @@ export GOOGLE_DEFAULT_CLIENT_ID="no"
 export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 
 alias setclip='xclip -selection c'
+alias chr='chromium'
