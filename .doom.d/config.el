@@ -58,3 +58,5 @@
 
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
+
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
