@@ -141,10 +141,13 @@ export PATH=$PATH:/usr/share/gradle/gradle-7.1.1/bin
 export M2_HOME=/usr/share/maven/
 
 alias em='emacs -nw -q'
+alias emold='emacs -q -l ~/.emacs.old.d/init.el'
 alias ed="ed -p ':'"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
+export GOPATH="/usr/local/go/bin"
+export PATH=$PATH:$GOPATH
 
 export PGUSER=$(whoami)
 alias config='/usr/bin/git --git-dir=/home/ferhad/.cfg/ --work-tree=/home/ferhad'
@@ -181,3 +184,5 @@ export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 
 alias setclip='xclip -selection c'
 alias chr='chromium'
+
+
