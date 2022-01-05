@@ -79,6 +79,7 @@
 (global-set-key (kbd "M-n") 'scroll-up-line)
 (global-set-key (quote [M-down]) (quote scroll-up-line))
 (global-set-key (quote [M-up]) (quote scroll-down-line))
+(global-set-key (kbd "C-c c") 'compile)
 
 ;; IntelliJ IDEA style move-line-up and move-line-down
 (defun move-line-up ()
@@ -145,4 +146,3 @@
 (load-theme 'doom-one t)
 (doom-themes-visual-bell-config)
 (doom-themes-neotree-config)
-

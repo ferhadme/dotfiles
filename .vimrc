@@ -25,3 +25,5 @@ highlight Comment ctermfg=green
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
+
+set clipboard=exclude:.*
