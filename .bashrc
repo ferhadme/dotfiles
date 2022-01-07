@@ -176,6 +176,7 @@ os_info() {
 [[ -z "$TMUX" ]] && exec tmux
 
 set -o emacs
+export EDITOR='vim'
 
 # Chromium API keys are missing warning message
 export GOOGLE_API_KEY="no"
