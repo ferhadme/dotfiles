@@ -14,8 +14,6 @@ set hlsearch
 
 set ruler
 
-colorscheme peachpuff
-
 set hlsearch
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
