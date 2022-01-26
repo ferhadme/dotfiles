@@ -1,12 +1,9 @@
 syntax on
 
-set tabstop=4
-
-set softtabstop=0 noexpandtab
-
-set shiftwidth=4
-
 set ai
+
+set tabstop=2
+set shiftwidth=2
 
 set number
 
@@ -25,3 +22,5 @@ map gp :bp<cr>
 map gd :bd<cr>
 
 set clipboard=exclude:.*
+
+nnoremap <space> i<space><esc>l

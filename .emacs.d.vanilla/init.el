@@ -34,7 +34,7 @@
  '(font-lock-keyword-face ((t (:foreground "#e80067"))))
  '(font-lock-preprocessor-face ((t (:foreground "CornFlowerBlue" :slant italic))))
  '(font-lock-type-face ((t (:foreground "#f38c40"))))
- '(highlight ((t (:background "#a65022" :foreground "#1B2229"))))
+ '(highlight ((t (:background "#4e4a4a" :foreground "#1B2229"))))
  '(line-number ((t (:inherit (shadow default) :foreground "#f3c44d"))))
  '(mc/region-face ((t (:inherit region :background "black"))))
  '(minibuffer-prompt ((t (:foreground "cyan"))))
@@ -42,7 +42,7 @@
  '(mode-line-highlight ((t (:inherit highlight :box (:line-width 2 :color "grey40" :style released-button)))))
  '(org-level-3 ((t (:foreground "chocolate1"))))
  '(org-level-4 ((t (:foreground "Cyan1"))))
- '(region ((t (:extend t :background "#a65022")))))
+ '(region ((t (:extend t :background "#4e4a4a")))))
 
 (require 'package)
 (add-to-list 'package-archives

@@ -6,4 +6,7 @@ set incsearch
 
 map Q gq
 
+set tabstop=4
+set shiftwidth=4
+
 "https://jb.gg/share-ideavimrc
