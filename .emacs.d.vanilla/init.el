@@ -141,7 +141,7 @@
 ;; basic doom-one theme configuration
 (require 'doom-themes)
 ;; Global settings (defaults)
-(setq doom-themes-enable-bold t 
+(setq doom-themes-enable-bold t
       doom-themes-enable-italic t)
 (load-theme 'doom-one t)
 (doom-themes-visual-bell-config)
