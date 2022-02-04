@@ -60,3 +60,5 @@
 (setq shell-command-switch "-ic")
 
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
+(global-set-key (kbd "C-x w") 'doom/window-enlargen)

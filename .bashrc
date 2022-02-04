@@ -163,9 +163,8 @@ print_name() {
 }
 
 intro_em() {
-    echo
-    echo -e "\e[31m¯\_(ツ)_/¯\e[0m"
-    echo
+    echo "¯\_(ツ)_/¯"
+		echo
 }
 
 os_info() {
@@ -186,4 +185,4 @@ export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 alias setclip='xclip -selection c'
 alias chr='chromium'
 
-
+intro_em
