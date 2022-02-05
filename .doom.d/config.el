@@ -62,3 +62,7 @@
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
 (global-set-key (kbd "C-x w") 'doom/window-enlargen)
+(global-set-key (kbd "C-x b") 'switch-to-buffer)
+(global-set-key (kbd "C-x B") '+vertico/switch-workspace-buffer)
+(global-set-key (kbd "C-e") 'end-of-line)
+(global-set-key (kbd "C-a") 'beginning-of-line)
