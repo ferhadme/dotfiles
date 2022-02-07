@@ -66,3 +66,22 @@
 (global-set-key (kbd "C-x B") '+vertico/switch-workspace-buffer)
 (global-set-key (kbd "C-e") 'end-of-visual-line)
 (global-set-key (kbd "C-a") 'beginning-of-visual-line)
+(global-set-key (kbd "C-c g s") 'magit-status)
+(global-set-key (kbd "C-c g l") 'magit-log)
+
+(defun duplicate-line ()
+  "Duplicate current line"
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (newline)
+  (yank))
+
+(global-set-key (kbd "C-.") 'duplicate-line)
+
+(global-set-key (kbd "M-p") 'drag-stuff-up)
+(global-set-key (kbd "M-n") 'drag-stuff-down)
+
+(remove-hook 'doom-first-buffer-hook #'ws-butler-global-mode)
+(setq-default show-trailing-whitespace t)
