@@ -80,8 +80,10 @@
 
 (global-set-key (kbd "C-.") 'duplicate-line)
 
-(global-set-key (kbd "M-p") 'drag-stuff-up)
-(global-set-key (kbd "M-n") 'drag-stuff-down)
+(global-set-key (kbd "M-p") 'scroll-down-line)
+(global-set-key (kbd "M-n") 'scroll-up-line)
 
 (remove-hook 'doom-first-buffer-hook #'ws-butler-global-mode)
 (setq-default show-trailing-whitespace t)
+
+(global-set-key (kbd "C-c o e") 'eshell)

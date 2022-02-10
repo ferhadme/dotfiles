@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: mainarg
+# key: main-arg
+# --
+int main(int argc, char **argv) {
+    $0
+    return 0;
+}
