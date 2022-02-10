@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: typedefstruct
-# key: tstr
-# --
-typedef struct
-{
-    $0;
-} $1;
