@@ -2,9 +2,8 @@
 
 # Script for changing emacs profile by changing sym link
 # Usage: ./emacs-profile.sh mode
-# Where mode is one of vanilla, doom, purcell
+# Where mode is one of vanilla, doom
 # doom - https://www.github.com/hlissner/doom-emacs
-# purcell - https://www.github.com/purcell/emacs.d
 
 set -e
 
