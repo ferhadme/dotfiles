@@ -150,8 +150,6 @@ export GOPATH="/usr/local/go/bin"
 export PATH=$PATH:$GOPATH
 
 export PGUSER=$(whoami)
-alias config='/usr/bin/git --git-dir=/home/ferhad/.cfg/ --work-tree=/home/ferhad'
-
 
 print_name() {
   echo -e "\e[31m    ______           __              __   __  ___     __        ___                 __     "
