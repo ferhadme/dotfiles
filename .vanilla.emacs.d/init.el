@@ -281,4 +281,12 @@
 (global-set-key (kbd "C-c m e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c m t") 'mc/mark-all-like-this)
 
+(require 'magit)
+(global-set-key (kbd "C-c g s") 'magit-status)
+(global-set-key (kbd "C-c g l") 'magit-log)
 
+(require 'treemacs)
+(global-set-key (kbd "C-c C-t") 'treemacs)
+
+(require 'vi-tilde-fringe)
+(add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
