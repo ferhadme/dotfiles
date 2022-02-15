@@ -1,5 +1,9 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
 
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
@@ -239,7 +243,7 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 (use-package doom-snippets
-  :load-path "~/Programming/emacs-stuff/snippets"
+  :load-path "~/.emacs.d/snippets"
   :after yasnippet)
 
 (add-hook 'after-init-hook 'global-company-mode)
@@ -290,3 +294,15 @@
 
 (require 'vi-tilde-fringe)
 (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
+
+(global-set-key (kbd "C-c C-e") 'eshell)
+(global-set-key (kbd "M-o") 'other-window)
+
+(setq inhibit-startup-screen t)
+
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-\"") 'avy-goto-char-2)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g a") 'avy-goto-word-0)
+(setq avy-highlight-first t)

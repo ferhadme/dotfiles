@@ -124,30 +124,18 @@ parse_git_branch() {
 
 export CLICOLOR=1
 export PS1="$(whoami)\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]: \[\e[m\]\[\e[32m\]\w\[\e[m\] \[\e[34m\]»\[\e[m\]\[\e[35m\]\$(parse_git_branch)\[\e[0m\] $ "
-# \[\e[3;31m\]
 export LSCOLORS=cxgxfxexbxegedabagacad
-# \e[3;31m
-# \e[0m
 
-# export LIBRARY_PATH=/usr/local/lib
-# export C_INCLUDE_PATH=/usr/local/include
-# export LD_LIBRARY_PATH=/usr/local/lib
 export PATH=/home/ferhad/.local/bin:$PATH
-export JAVA_HOME=/usr/lib/jvm/jdk-16.0.2
+export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto/
 export JAVA_BIN=$JAVA_HOME/bin
 export PATH=$JAVA_BIN:$PATH 
 
-export PATH=$PATH:/usr/share/gradle/gradle-7.1.1/bin
-export M2_HOME=/usr/share/maven/
+export M2_HOME=/usr/lib/apache-maven-3.8.4/
 
 alias em='emacs -nw -q'
 alias emold='emacs -q -l ~/.emacs.old.d/init.el'
 alias ed="ed -p ':'"
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-export GOPATH="/usr/local/go/bin"
-export PATH=$PATH:$GOPATH
 
 export PGUSER=$(whoami)
 
@@ -175,12 +163,10 @@ os_info() {
 set -o emacs
 export EDITOR='vim'
 
-# Chromium API keys are missing warning message
-export GOOGLE_API_KEY="no"
-export GOOGLE_DEFAULT_CLIENT_ID="no"
-export GOOGLE_DEFAULT_CLIENT_SECRET="no"
-
 alias setclip='xclip -selection c'
-alias chr='chromium'
 
 intro_em
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
