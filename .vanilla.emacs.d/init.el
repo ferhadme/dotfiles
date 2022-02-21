@@ -1,3 +1,5 @@
+;; (setq gc-cons-threshold 100000000)
+
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
@@ -18,6 +20,7 @@
 (delete-selection-mode 1)
 
 (global-set-key (kbd "C-c c c") 'compile)
+(global-set-key (kbd "C-c c r") 'recompile)
 (global-set-key (kbd "M-n") 'scroll-up-line)
 (global-set-key (kbd "M-p") 'scroll-down-line)
 
@@ -39,26 +42,9 @@
   (interactive)
   (rc/copy-line)
   (rc/jump-to-newline)
-  (yank))
+  (yank)
+  (indent-for-tab-command))
 (global-set-key (kbd "C-.") 'rc/duplicate-line)
-
-(defun rc/move-line-x (x)
-  (interactive)
-  (beginning-of-line)
-  (kill-line)
-  (delete-char 1)
-  (funcall x)
-  (yank))
-
-(defun rc/move-line-up ()
-  (interactive)
-  (rc/move-line-x 'previous-line))
-(global-set-key (kbd "M-<up>") 'rc/move-line-up)
-
-(defun rc/move-line-down ()
-  (interactive)
-  (rc/move-line-x 'rc/jump-to-newline))
-(global-set-key (kbd "M-<down>") 'rc/move-line-down)
 
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
@@ -130,12 +116,20 @@
 
 (global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "C-\"") 'avy-goto-char-2)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
+(global-set-key (kbd "M-g l") 'avy-goto-line)
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
 (global-set-key (kbd "M-g a") 'avy-goto-word-0)
 (setq avy-highlight-first t)
 
 (load-theme 'gruber-darker t)
 
-(require 'simple-modeline)
-(simple-modeline-mode)
+;; default color of 2nd level header in org mode is white
+(set-face-attribute 'org-level-2 nil
+		    :foreground "#A382FF")
+					  :
+
+(add-to-list 'after-init-hook
+          (lambda ()
+            (message (concat "emacs ("
+			     (number-to-string (emacs-pid)) ") started in "
+			     (emacs-init-time)))))
