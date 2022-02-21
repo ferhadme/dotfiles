@@ -29,7 +29,9 @@
   (end-of-line)
   (newline)
   (indent-for-tab-command))
-(global-set-key (kbd "C-<return>") 'rc/jump-to-newline)
+(add-hook 'prog-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-<return>") 'rc/jump-to-newline)))
 
 (defun rc/copy-line ()
   (interactive)
@@ -122,11 +124,6 @@
 (setq avy-highlight-first t)
 
 (load-theme 'gruber-darker t)
-
-;; default color of 2nd level header in org mode is white
-(set-face-attribute 'org-level-2 nil
-		    :foreground "#A382FF")
-					  :
 
 (add-to-list 'after-init-hook
           (lambda ()
