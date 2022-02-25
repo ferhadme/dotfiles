@@ -114,7 +114,7 @@
 (global-set-key (kbd "C-c C-e") 'eshell)
 (global-set-key (kbd "M-o") 'other-window)
 
-(setq inhibit-startup-screen t)
+;; (setq inhibit-startup-screen t)
 
 (global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "C-\"") 'avy-goto-char-2)
@@ -125,8 +125,12 @@
 
 (load-theme 'gruber-darker t)
 
+(add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+
 (add-to-list 'after-init-hook
           (lambda ()
             (message (concat "emacs ("
 			     (number-to-string (emacs-pid)) ") started in "
 			     (emacs-init-time)))))
+
+(load "~/.emacs.d/rc/org.el")

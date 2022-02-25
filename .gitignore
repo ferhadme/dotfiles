@@ -1,2 +1,5 @@
 .vanilla.emacs.d/
 !.vanilla.emacs.d/init.el
+!.vanilla.emacs.d/rc/**
+
+**/*~
