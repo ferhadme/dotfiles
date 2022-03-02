@@ -27,9 +27,15 @@
 (defun rc/jump-to-newline ()
   (interactive)
   (end-of-line)
-  (newline)
+  (newline))
+(defun rc/jump-to-newline-prog-mode ()
+  (interactive)
+  (rc/jump-to-newline)
   (indent-for-tab-command))
 (add-hook 'prog-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-<return>") 'rc/jump-to-newline-prog-mode)))
+(add-hook 'text-mode-hook
 	  (lambda ()
 	    (local-set-key (kbd "C-<return>") 'rc/jump-to-newline)))
 
@@ -44,8 +50,7 @@
   (interactive)
   (rc/copy-line)
   (rc/jump-to-newline)
-  (yank)
-  (indent-for-tab-command))
+  (yank))
 (global-set-key (kbd "C-.") 'rc/duplicate-line)
 
 (require 'smex)
@@ -106,7 +111,7 @@
 (global-set-key (kbd "C-c g l") 'magit-log)
 
 (require 'treemacs)
-(global-set-key (kbd "C-c C-t") 'treemacs)
+(global-set-key (kbd "C-c t") 'treemacs)
 
 (require 'vi-tilde-fringe)
 (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)

@@ -5,11 +5,12 @@
 	("PROGRESS" . (:foreground "purple" :weight normal))
 	("IDEA" . (:foreground "yellow" :weight normal))
 	("REFERENCE" . (:foreground "cyan" :weight normal))
-	("URGENT" . (:foreground "#C03D29" :weight bold))
+	("URGENT" . (:foreground "#C03D29" :weight italic))
+	("NOW" . (:foreground "#9E8EC0" :weight bold))
         ))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "URGENT" "PROGRESS" "REFERENCE" "IDEA" "HACK" "DONE")))
+      '((sequence "TODO" "URGENT" "PROGRESS" "NOW" "REFERENCE" "IDEA" "HACK" "DONE")))
 
 (add-hook 'org-mode-hook
  	  (lambda () (local-set-key (kbd "C-c a") (kbd "C-u C-u C-u TAB"))))
