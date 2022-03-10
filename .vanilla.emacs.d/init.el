@@ -67,6 +67,9 @@
                          (interactive)
                          (c-toggle-comment-style -1)))
 
+(add-hook 'makefile-mode-hook (lambda ()
+				(setq tab-width 4)))
+
 (add-hook 'after-init-hook 'global-company-mode)
 
 (setq tramp-auto-save-directory "/tmp")
