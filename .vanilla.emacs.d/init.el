@@ -23,6 +23,7 @@
 (tooltip-mode -1)
 (show-paren-mode 1)
 (delete-selection-mode 1)
+(setq visible-bell t)
 
 (setq-default show-trailing-whitespace t)
 
@@ -66,6 +67,7 @@
 (global-set-key (kbd "C-,") 'rc/copy-line)
 (global-set-key (kbd "C-.") 'rc/duplicate-line)
 (global-set-key (kbd "C-x w") 'rc/enlarge-window)
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; Scheme mode for Racket files
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
