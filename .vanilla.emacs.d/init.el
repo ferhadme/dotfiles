@@ -1,3 +1,15 @@
+;; The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 990 990))
+;; Profile emacs startup
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "*** Emacs loaded in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+
+
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
@@ -27,17 +39,28 @@
 
 (setq-default show-trailing-whitespace t)
 
+(set-frame-parameter (selected-frame) 'alpha '(99 . 99))
+(add-to-list 'default-frame-alist '(alpha . (99 . 99)))
+(set-frame-parameter (selected-frame) 'fullscreen 'maximized)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
-(add-hook 'prog-mode-hook 'global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative)
+;; Enable relative line numbers for some modes
+(dolist (mode '(text-mode-hook
+                prog-mode-hook
+                conf-mode-hook))
+  (add-hook mode (lambda ()
+		   (display-line-numbers-mode 1)
+		   (setq display-line-numbers-type 'relative))))
 
-(add-to-list 'after-init-hook
-             (lambda ()
-               (message (concat "emacs ("
-				(number-to-string (emacs-pid)) ") started in "
-				(emacs-init-time)))))
+;; Override some modes which derive from the above
+(dolist (mode '(org-mode-hook
+		term-mode-hook
+		shell-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (setq tramp-auto-save-directory "/tmp")
 
@@ -110,7 +133,7 @@
 	("OPTIMIZE"  . "#7943f8")
         ("DEPRECATED" . "#848484")
         ("HACK"   . "#00ff64")
-        ("REVIEW"   . "#1E90FF")))
+        ("REVIEW"   . "#1E99FF")))
 
 
 ;; Editing in many places at once
@@ -149,3 +172,20 @@
 
 ;; Theme from https://github.com/rexim/gruber-darker-theme
 (load-theme 'gruber-darker t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(org-bullets vi-tilde-fringe use-package treemacs smex shrink-path rich-minority powerline multiple-cursors markdown-mode magit hl-todo gruber-darker-theme company color-theme)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-level-1 ((t (:foreground "#96A6C8" :weight normal))))
+ '(org-level-2 ((t (:foreground "#CC8C3C" :weight normal))))
+ '(org-level-3 ((t (:foreground "#F4F4FF" :weight normal))))
+ '(org-level-4 ((t (:foreground "#F4F4FF" :weight normal))))
+ '(org-level-5 ((t (:foreground "#F4F4FF" :weight normal)))))
