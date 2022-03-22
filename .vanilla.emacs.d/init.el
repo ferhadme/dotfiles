@@ -10,6 +10,7 @@
                      gcs-done)))
 
 
+;; Package repository configuration
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
@@ -18,8 +19,8 @@
 (package-initialize)
 
 
-(load "~/.emacs.d/fm/org.el")
-(load "~/.emacs.d/fm/helpers.el")
+;; Imports
+(load-file "~/.emacs.d/fm/helpers.el")
 
 
 ;; Ido completion
@@ -27,8 +28,7 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
-
-;; Common configurations
+;; Usual Emacs tweaks
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -83,13 +83,13 @@
 (global-set-key (kbd "M-o") 'other-window)
 (add-hook 'prog-mode-hook
 	  (lambda ()
-	    (local-set-key (kbd "C-<return>") 'rc/jump-to-newline-prog-mode)))
+	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline-prog-mode)))
 (add-hook 'text-mode-hook
 	  (lambda ()
-	    (local-set-key (kbd "C-<return>") 'rc/jump-to-newline)))
-(global-set-key (kbd "C-,") 'rc/copy-line)
-(global-set-key (kbd "C-.") 'rc/duplicate-line)
-(global-set-key (kbd "C-x w") 'rc/enlarge-window)
+	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline)))
+(global-set-key (kbd "C-,") 'fm/copy-line)
+(global-set-key (kbd "C-.") 'fm/duplicate-line)
+(global-set-key (kbd "C-x w") 'fm/enlarge-window)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; Scheme mode for Racket files
@@ -178,3 +178,7 @@
              "~/.emacs.d/snippets")
 (require 'yasnippet)
 (yas-global-mode 1)
+
+
+;; Org mode
+(load-file "~/.emacs.d/fm/org.el")

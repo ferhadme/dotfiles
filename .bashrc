@@ -129,12 +129,11 @@ export LSCOLORS=cxgxfxexbxegedabagacad
 export PATH=/home/ferhad/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto/
 export JAVA_BIN=$JAVA_HOME/bin
-export PATH=$JAVA_BIN:$PATH 
+export PATH=$JAVA_BIN:$PATH
 
 export M2_HOME=/usr/lib/apache-maven-3.8.4/
 
 alias em='emacs -nw -q'
-alias emold='emacs -q -l ~/.emacs.old.d/init.el'
 alias ed="ed -p ':'"
 
 export PGUSER=$(whoami)
@@ -171,5 +170,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias mongodquick='mongod --auth --port 27017 --dbpath /data/db'
 alias mongoshquick='mongosh --port 27017 -u "ferhad" -p --authenticationDatabase "admin" --quiet'
+
+xmodmap ~/.Xmodmap
 
 colorscript random
