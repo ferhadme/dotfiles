@@ -92,6 +92,12 @@
 (global-set-key (kbd "C-x w") 'fm/enlarge-window)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+;; Emacs window switch
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <left>") 'windmove-left)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+
 ;; Scheme mode for Racket files
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
 
