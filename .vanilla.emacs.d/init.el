@@ -70,6 +70,7 @@
     ad-do-it))
 
 (setq inhibit-startup-screen t)
+(setq confirm-kill-emacs 'y-or-n-p)
 
 (setq eshell-prompt-function
       (lambda nil
@@ -184,6 +185,12 @@
              "~/.emacs.d/snippets")
 (require 'yasnippet)
 (yas-global-mode 1)
+
+
+;; Move current line or region up or down
+(require 'move-text)
+(global-set-key (kbd "M-<up>") 'move-text-up)
+(global-set-key (kbd "M-<down>") 'move-text-down)
 
 
 ;; Org mode
