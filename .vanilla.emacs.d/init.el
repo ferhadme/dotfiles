@@ -79,18 +79,26 @@
 (global-set-key (kbd "C-c C-e") 'eshell)
 (global-set-key (kbd "C-c c c") 'compile)
 (global-set-key (kbd "C-c c r") 'recompile)
+
 (global-set-key (kbd "M-n") 'scroll-up-line)
 (global-set-key (kbd "M-p") 'scroll-down-line)
+
 (global-set-key (kbd "M-o") 'other-window)
+
 (add-hook 'prog-mode-hook
 	  (lambda ()
 	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline-prog-mode)))
 (add-hook 'text-mode-hook
 	  (lambda ()
 	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline)))
+(add-hook 'conf-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline)))
+
 (global-set-key (kbd "C-,") 'fm/copy-line)
 (global-set-key (kbd "C-.") 'fm/duplicate-line)
 (global-set-key (kbd "C-x w") 'fm/enlarge-window)
+
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; Rebinding arrow keys for fast window switch
@@ -98,6 +106,9 @@
 (global-set-key (kbd "<down>") 'windmove-down)
 (global-set-key (kbd "<left>") 'windmove-left)
 (global-set-key (kbd "<right>") 'windmove-right)
+
+;; Overwrite mode
+(global-set-key (kbd "C-c o") 'overwrite-mode)
 
 ;; Scheme mode for Racket files
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))

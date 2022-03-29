@@ -49,7 +49,7 @@ sub main {
     }
 
     my $current_fan_mode = &status;
-    
+
     if ($option eq 'silent') {
         change_fan_mode(SILENT);
         change_status_log($current_fan_mode, 'silent');
