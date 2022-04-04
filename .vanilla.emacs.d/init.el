@@ -99,6 +99,8 @@
 (global-set-key (kbd "C-.") 'fm/duplicate-line)
 (global-set-key (kbd "C-x w") 'fm/enlarge-window)
 
+(global-set-key (kbd "C-c p") 'fm/open-programming-workspace)
+
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; Rebinding arrow keys for fast window switch

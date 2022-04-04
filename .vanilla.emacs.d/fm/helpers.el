@@ -29,3 +29,8 @@
   (interactive)
   (let ((size 15))
     (enlarge-window size)))
+
+(defun fm/open-programming-workspace ()
+  "Opens programming workspace"
+  (interactive)
+  (find-file "~/Programming"))
