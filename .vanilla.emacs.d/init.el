@@ -46,6 +46,7 @@
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
 
 ;; Enable relative line numbers for some modes
 (dolist (mode '(text-mode-hook
@@ -99,7 +100,7 @@
 (global-set-key (kbd "C-.") 'fm/duplicate-line)
 (global-set-key (kbd "C-x w") 'fm/enlarge-window)
 
-(global-set-key (kbd "C-c p") 'fm/open-programming-workspace)
+(global-set-key (kbd "C-c o") 'overwrite-mode)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
@@ -109,8 +110,9 @@
 (global-set-key (kbd "<left>") 'windmove-left)
 (global-set-key (kbd "<right>") 'windmove-right)
 
-;; Overwrite mode
-(global-set-key (kbd "C-c o") 'overwrite-mode)
+;; Workspaces
+(global-set-key (kbd "C-c w p") (lambda () (interactive) (find-file "~/Programming/")))
+(global-set-key (kbd "C-c w o") (lambda () (interactive) (find-file "~/Documents/Org/")))
 
 ;; Scheme mode for Racket files
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
