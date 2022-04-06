@@ -165,6 +165,7 @@
 (global-set-key (kbd "C-c m a") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-c m e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c m t") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 
 ;; A Git interface for Emacs
