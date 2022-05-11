@@ -25,7 +25,7 @@ if [[ ${JAR_PATH} == "" ]] && [[ ${CLASS_PATH} == "" ]]
 then
     GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout)
     ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
-    VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)    
+    VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
     java -cp target/${ARTIFACT_ID}-${VERSION}.jar ${GROUP_ID}.App
 else
     java -cp ${JAR_PATH} ${CLASS_PATH}

@@ -168,8 +168,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias mongodquick='mongod --auth --port 27017 --dbpath /data/db'
-alias mongoshquick='mongosh --port 27017 -u "ferhad" -p --authenticationDatabase "admin" --quiet'
+alias mongodquick='sudo mongod --auth --port 27017 --dbpath /data/db'
+alias mongoshquick='sudo mongosh --port 27017 -u "ferhad" -p --authenticationDatabase "admin" --quiet'
 
 xmodmap ~/.Xmodmap
 

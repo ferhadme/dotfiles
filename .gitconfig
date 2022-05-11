@@ -26,6 +26,7 @@
 	lg = log --oneline --graph --decorate
 	###
 	m = merge
+	mom = merge origin/master
 	###
 	ch = checkout
 	chm = checkout master
