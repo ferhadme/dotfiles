@@ -130,6 +130,7 @@ export PATH=/home/ferhad/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto/
 export JAVA_BIN=$JAVA_HOME/bin
 export PATH=$JAVA_BIN:$PATH
+export DRUID_JAVA_HOME=/usr/lib/jvm/java-8-amazon-corretto/
 
 export M2_HOME=/usr/lib/apache-maven-3.8.4/
 

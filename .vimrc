@@ -21,6 +21,6 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
 
-set clipboard=exclude:.*
+" set clipboard=exclude:.*
 
 nnoremap <space> i<space><esc>l
