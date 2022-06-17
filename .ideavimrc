@@ -9,4 +9,8 @@ map Q gq
 set tabstop=4
 set shiftwidth=4
 
+sethandler <C-C> a:ide
+sethandler <C-V> a:ide
+sethandler <C-I> a:ide
+
 "https://jb.gg/share-ideavimrc
