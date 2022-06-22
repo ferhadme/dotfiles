@@ -14,6 +14,5 @@ sethandler <C-V> a:ide
 sethandler <C-I> a:ide
 sethandler <C-A> a:ide
 sethandler <C-Z> a:ide
-sethandler <Tab> a:ide
 
 "https://jb.gg/share-ideavimrc
