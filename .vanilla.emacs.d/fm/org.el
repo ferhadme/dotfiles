@@ -40,3 +40,7 @@
 (setq org-startup-with-inline-images t)
 
 (setq org-src-fontify-natively t)
+
+(set-face-attribute 'italic nil
+                :slant 'oblique
+                :underline nil)
