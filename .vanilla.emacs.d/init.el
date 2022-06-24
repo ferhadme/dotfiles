@@ -48,6 +48,12 @@
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 
+;; Improve scrolling
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 2)))
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse 't)
+
+
 ;; Enable relative line numbers for some modes
 (dolist (mode '(text-mode-hook
                 prog-mode-hook

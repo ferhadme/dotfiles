@@ -10,7 +10,7 @@ set tabstop=4
 set shiftwidth=4
 
 sethandler <C-C> a:ide
-sethandler <C-V> a:ide
+sethandler <C-V> n-v:vim i:ide
 sethandler <C-I> a:ide
 sethandler <C-A> a:ide
 sethandler <C-Z> a:ide
