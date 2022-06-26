@@ -198,7 +198,6 @@ mode "$application_launcher" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
   bindsym $mod+o mode "default"
-
 }
 
 bindsym $mod+o mode "$application_launcher"
@@ -209,3 +208,5 @@ bindsym $mod+o mode "$application_launcher"
 bar {
   status_command i3status -c
 }
+
+exec --no-startup-id nitrogen --restore
