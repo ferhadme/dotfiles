@@ -184,10 +184,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+c exec xrandr --output HDMI-1-1 --auto --left-of eDP
 
 # Keybindings for launching applications
 mode "$application_launcher" {
-  bindsym b exec google-chrome
+  bindsym b exec google-chrome %u
   bindsym f exec nautilus
   bindsym c exec gnome-calculator
   bindsym d exec gnome-calendar
