@@ -141,8 +141,14 @@
                          (interactive)
                          (c-toggle-comment-style -1)))
 
-(add-hook 'makefile-mode-hook (lambda ()
-				(setq tab-width 4)))
+(defun tab-width-config ()
+  (setq c-basic-offset 4
+	tab-width 4
+	indent-tabs-mode t))
+
+;; Go, Makefile tab width
+(add-hook 'go-mode-hook 'tab-width-config)
+(add-hook 'makefile-hook 'tab-width-config)
 
 
 ;; Company code completion
