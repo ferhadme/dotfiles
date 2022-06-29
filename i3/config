@@ -184,7 +184,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+c exec xrandr --output HDMI-1-1 --auto --left-of eDP
+
+# Keybindings for controlling multiple monitors
+mode "$multiple_monitors" {
+  # Connect to left monitor
+  bindsym c exec xrandr --output HDMI-1-1 --auto --left-of eDP
+  # Reset display after disconnecting to monitor
+  bindsym r exec xrandr -s 0
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+m mode "default"
+}
+
+bindsym $mod+m mode "$multiple_monitors"
 
 # Keybindings for launching applications
 mode "$application_launcher" {

@@ -174,6 +174,6 @@ alias mongoshquick='sudo mongosh --port 27017 -u "ferhad" -p --authenticationDat
 
 xmodmap ~/.Xmodmap
 
-eval $(keychain --eval id_ed25519 -q --noask)
+eval $(keychain --eval id_ed25519 -q)
 
 colorscript random
