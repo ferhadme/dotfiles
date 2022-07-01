@@ -9,7 +9,7 @@
   "Duplicates a line under the cursor"
   (interactive)
   (fm/copy-line)
-  (fm/jump-to-newline)
+  (newline)
   (yank))
 
 (defun fm/enlarge-window ()
