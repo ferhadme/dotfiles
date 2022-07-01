@@ -119,7 +119,7 @@
 ;; Workspaces
 (global-set-key (kbd "C-c w p") (lambda () (interactive) (find-file "~/Programming/")))
 (global-set-key (kbd "C-c w o") (lambda () (interactive) (find-file "~/Documents/Org/")))
-(global-set-key (kbd "C-c w c") (lambda () (interactive) (find-file "~/.emacs.d/")))
+(global-set-key (kbd "C-c w c") (lambda () (interactive) (find-file "~/dotfiles/")))
 
 ;; Scheme mode for Racket files
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
