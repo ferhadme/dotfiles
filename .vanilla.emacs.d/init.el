@@ -92,15 +92,7 @@
 
 (global-set-key (kbd "M-o") 'other-window)
 
-(add-hook 'prog-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline-prog-mode)))
-(add-hook 'text-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline)))
-(add-hook 'conf-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-<return>") 'fm/jump-to-newline)))
+(global-set-key (kbd "C-<return>") (kbd "C-e C-m"))
 
 (global-set-key (kbd "C-,") 'fm/copy-line)
 (global-set-key (kbd "C-.") 'fm/duplicate-line)

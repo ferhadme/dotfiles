@@ -1,15 +1,3 @@
-(defun fm/jump-to-newline ()
-  "Jumps to newline from any position"
-  (interactive)
-  (end-of-line)
-  (newline))
-
-(defun fm/jump-to-newline-prog-mode ()
-  "Jumps to newline from any position with indentation"
-  (interactive)
-  (fm/jump-to-newline)
-  (indent-for-tab-command))
-
 (defun fm/copy-line ()
   "Copies a line under the cursor"
   (interactive)
