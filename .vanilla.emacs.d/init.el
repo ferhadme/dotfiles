@@ -75,9 +75,11 @@
   (let ((split-width-threshold nil)
         (split-height-threshold 0))
     ad-do-it))
+(setq compilation-ask-about-save nil)
 
 (setq inhibit-startup-screen t)
 (setq confirm-kill-emacs 'y-or-n-p)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq eshell-prompt-function
       (lambda nil
@@ -214,5 +216,19 @@
 (global-set-key (kbd "M-<down>") 'move-text-down)
 
 
+;; Don't ask symbolic link to Git controlled source file
+(setq vc-follow-symlinks t)
+
+
 ;; Org mode
 (load-file "~/.emacs.d/fm/org.el")
+
+
+;; Taken from https://github.com/stapelberg/configfiles
+;; Store backups and auto-save files in a single directory so that
+;; they don’t clutter up my filesystem (or fail to be written on curlftpfs):
+(let ((backupdir (format "%s/emacs-backups%d/" (or (getenv "XDG_RUNTIME_DIR") "/tmp") (user-uid))))
+  (mkdir backupdir t)
+  (setq backup-directory-alist `(("." . ,backupdir)))
+  (setq auto-save-file-name-transforms
+	`((".*" ,backupdir t))))
