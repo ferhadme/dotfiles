@@ -40,8 +40,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -218,12 +218,28 @@ mode "$application_launcher" {
 
 bindsym $mod+o mode "$application_launcher"
 
+# Media control
+mode "$media_control" {
+  bindsym Up exec playerctl play
+  bindsym Down exec playerctl pause
+  bindsym Left exec playerctl next
+  bindsym Right exec playerctl previous
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+c mode "default"
+}
+
+bindsym $mod+c mode "$media_control"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
   status_command i3status -c
 }
+
+### TODO
+# Controlling screen brightness
 
 ### Taken from https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
 # Screenshots
