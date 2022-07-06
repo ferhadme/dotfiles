@@ -8,7 +8,7 @@ This script is for controlling fan mode of asus gaming laptops on Linux
 
 Be sure you use kernel version 5.6+
 
-Usage: sudo ./fan_control option
+Usage: ./fan_control option
 Options:
   {silent|balance|turbo}
   status
@@ -82,18 +82,22 @@ sub change_fan_mode {
 sub status {
     open(FILE, '<', FILELOC) or die $!;
     my $current_mode = <FILE>;
+    my $current_mode_format;
     if ($current_mode == SILENT) {
-        return "silent";
+        $current_mode_format = "silent";
     } elsif ($current_mode == BALANCE) {
-        return "balance";
+	$current_mode_format = "balance";
     } elsif ($current_mode == TURBO) {
-        return "turbo";
+	$current_mode_format = "turbo";
+    } else {
+	$current_mode_format = "undefined";
     }
-    return "undefined";
+    close(FILE);
+    return $current_mode_format;
 }
 
 sub print_usage {
-    print "Usage: sudo ./fan_control option\n";
+    print "Usage: ./fan_control option\n";
     print "Options:\n";
     print "\t{silent|balance|turbo}\n";
     print "\tstatus\n";
