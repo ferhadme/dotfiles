@@ -222,8 +222,8 @@ bindsym $mod+o mode "$application_launcher"
 mode "$media_control" {
   bindsym Up exec playerctl play
   bindsym Down exec playerctl pause
-  bindsym Left exec playerctl next
-  bindsym Right exec playerctl previous
+  bindsym Left exec playerctl previous
+  bindsym Right exec playerctl next
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -238,9 +238,6 @@ bar {
   status_command i3status -c
 }
 
-### TODO
-# Controlling screen brightness
-
 ### Taken from https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)"
@@ -254,3 +251,5 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 bindsym $mod+Escape exec i3lock --color=000000
 
 exec --no-startup-id nitrogen --restore
+
+exec --no-startup-id xmodmap ~/.Xmodmap

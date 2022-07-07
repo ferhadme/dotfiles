@@ -144,6 +144,7 @@
 ;; Go, Makefile tab width
 (add-hook 'go-mode-hook 'tab-width-config)
 (add-hook 'makefile-hook 'tab-width-config)
+(add-hook 'conf-mode-hook 'tab-width-config)
 
 
 ;; Company code completion

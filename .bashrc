@@ -172,8 +172,6 @@ export NVM_DIR="$HOME/.nvm"
 alias mongodquick='sudo mongod --auth --port 27017 --dbpath /data/db'
 alias mongoshquick='sudo mongosh --port 27017 -u "ferhad" -p --authenticationDatabase "admin" --quiet'
 
-xmodmap ~/.Xmodmap
-
 eval $(keychain --eval id_ed25519 -q)
 
 colorscript random
