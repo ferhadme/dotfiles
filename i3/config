@@ -205,6 +205,7 @@ mode "$application_launcher" {
   bindsym f exec nautilus
   bindsym r exec nautilus ~/Documents/Books
   bindsym j exec nautilus ~/Downloads
+  bindsym p exec nautilus ~/Pictures
   bindsym c exec gnome-calculator
   bindsym d exec gnome-calendar
   bindsym e exec emacs
