@@ -8,10 +8,13 @@
 	("URGENT" . (:foreground "#C03D29" :weight italic))
 	("NOW" . (:foreground "#9E8EC0" :weight bold))
 	("BUG" . (:foreground "#FF0000" :weight bold))
+	("OPTIONAL" . (:foreground "#74b3ce" :weight bold))
 	))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "URGENT" "BUG" "PROGRESS" "NOW" "REFERENCE" "IDEA" "HACK" "DONE")))
+      '((sequence "TODO" "URGENT" "BUG" "PROGRESS"
+		  "NOW" "OPTIONAL" "REFERENCE"
+		  "IDEA" "HACK" "DONE")))
 
 (setq org-hide-emphasis-markers t)
 ;; (add-hook 'org-mode-hook 'variable-pitch-mode)

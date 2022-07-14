@@ -252,6 +252,9 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 bindsym $mod+Escape exec i3lock --color=000000
 
-exec --no-startup-id nitrogen --restore
+# Following features requires sudo privileges and should be handled in /etc/sudoers
+# TODO: brightness mode
+# TODO: suspend i3
 
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id xmodmap ~/.Xmodmap
