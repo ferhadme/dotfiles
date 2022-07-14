@@ -23,7 +23,7 @@ use warnings;
 use v5.32;
 
 use constant {
-    BRIGHTNESS_FILELOC => '/sys/class/backlight/amdgpu_bl1/brightness',
+    BRIGHTNESS_FILELOC => '/sys/class/backlight/amdgpu_bl0/brightness',
     MAX_BRIGHTNESS_FILELOC => '/sys/class/backlight/amdgpu_bl1/max_brightness',
     MIN_BRIGHTNESS => 0, # blank screen
 };
