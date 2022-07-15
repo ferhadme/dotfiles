@@ -252,16 +252,8 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 bindsym $mod+Escape exec i3lock --color=000000
 
-mode "$brightness_control" {
-  bindsym Up exec b-control --inc 10
-  bindsym Down exec b-control --dec 10
-
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-  bindsym $mod+b mode "default"
-}
-
-bindsym $mod+b mode "$brightness_control"
+bindsym XF86MonBrightnessUp exec b-control --inc 10
+bindsym XF86MonBrightnessDown exec b-control --dec 10
 
 mode "$fan_control" {
   bindsym t exec f-control turbo
@@ -275,7 +267,7 @@ mode "$fan_control" {
 
 bindcode 71 mode "$fan_control"
 
-bindsym XF86PowerOff exec suspend-i3
+bindsym XF86PowerOff exec --no-startup-id suspend-i3
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xmodmap ~/.Xmodmap
