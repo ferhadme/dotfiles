@@ -252,10 +252,30 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 bindsym $mod+Escape exec i3lock --color=000000
 
-# Following features requires sudo privileges and should be handled in /etc/sudoers
-# TODO: brightness control mode
-# TODO: fan control mode
-# TODO: suspend i3
+mode "$brightness_control" {
+  bindsym Up exec b-control --inc 10
+  bindsym Down exec b-control --dec 10
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+b mode "default"
+}
+
+bindsym $mod+b mode "$brightness_control"
+
+mode "$fan_control" {
+  bindsym t exec f-control turbo
+  bindsym s exec f-control silent
+  bindsym b exec f-control balance
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindcode 71 mode "default"
+}
+
+bindcode 71 mode "$fan_control"
+
+bindsym XF86PowerOff exec suspend-i3
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xmodmap ~/.Xmodmap

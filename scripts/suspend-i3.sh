@@ -1,3 +1,4 @@
 #!/usr/bin/bash
 
-# TODO: Suspend i3
+i3lock &&
+    sh -c "echo mem > /sys/power/state"
