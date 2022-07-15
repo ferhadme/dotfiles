@@ -23,12 +23,16 @@ use warnings;
 use v5.32;
 
 use constant {
-    BRIGHTNESS_FILELOC => '/sys/class/backlight/amdgpu_bl0/brightness',
-    MAX_BRIGHTNESS_FILELOC => '/sys/class/backlight/amdgpu_bl0/max_brightness',
+    BRIGHTNESS_FILELOC0 => '/sys/class/backlight/amdgpu_bl0/brightness',
+    BRIGHTNESS_FILELOC1 => '/sys/class/backlight/amdgpu_bl1/brightness',
+    MAX_BRIGHTNESS_FILELOC0 => '/sys/class/backlight/amdgpu_bl0/max_brightness',
+    MAX_BRIGHTNESS_FILELOC1 => '/sys/class/backlight/amdgpu_bl1/max_brightness',
     MIN_BRIGHTNESS => 0, # blank screen
 };
 
-my $max_brighness;
+my $max_brightness;
+my $brightness_fileloc;
+my $max_brightness_fileloc;
 
 my %opt = qw /
    --help --help
@@ -49,7 +53,9 @@ sub main {
 	exit;
     }
 
-    my $current_brightness = &get_brightness_value_from(BRIGHTNESS_FILELOC);
+    $brightness_fileloc = (-e BRIGHTNESS_FILELOC0) ? BRIGHTNESS_FILELOC0 : BRIGHTNESS_FILELOC1;
+    my $current_brightness = &get_brightness_value_from($brightness_fileloc);
+
     if ($option eq '--get') {
 	print $current_brightness;
 	exit;
@@ -64,8 +70,8 @@ sub main {
 
     if ($option eq '--inc') {
 	my $inc_brightness = $current_brightness + $value;
-	if ($inc_brightness > $max_brighness) {
-	    &set_brightness_value($max_brighness);
+	if ($inc_brightness > $max_brightness) {
+	    &set_brightness_value($max_brightness);
 	    exit;
 	}
 	&set_brightness_value($inc_brightness);
@@ -82,7 +88,8 @@ sub main {
 }
 
 sub init_max_brightness {
-    $max_brighness = &get_brightness_value_from(MAX_BRIGHTNESS_FILELOC);
+    $max_brightness_fileloc = (-e MAX_BRIGHTNESS_FILELOC0) ? MAX_BRIGHTNESS_FILELOC0 : MAX_BRIGHTNESS_FILELOC1;
+    $max_brightness = &get_brightness_value_from($max_brightness_fileloc);
 }
 
 sub get_brightness_value_from {
@@ -95,14 +102,14 @@ sub get_brightness_value_from {
 
 sub set_brightness_value {
     ($_) = (@_);
-    open(OUT, '>', BRIGHTNESS_FILELOC) or die $!;
+    open(OUT, '>', $brightness_fileloc) or die $!;
     print OUT $_;
     close(OUT);
 }
 
 sub get_value {
     $_ = shift @ARGV or die &usage;
-    (return $_) if (/^\d+$/ and $_ >= MIN_BRIGHTNESS and $_ <= $max_brighness)
+    (return $_) if (/^\d+$/ and $_ >= MIN_BRIGHTNESS and $_ <= $max_brightness)
 	or die "Brightness value is invalid\n";
 }
 

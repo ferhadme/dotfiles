@@ -6,6 +6,7 @@
 .vanilla.emacs.d/eshell
 .vanilla.emacs.d/ido.last
 .vanilla.emacs.d/.mc-lists.el
+.vanilla.emacs.d/.org-id-locations
 .vanilla.emacs.d/smex-items
 .vanilla.emacs.d/snippets
 .vanilla.emacs.d/transient
