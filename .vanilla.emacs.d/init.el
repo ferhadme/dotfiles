@@ -22,6 +22,8 @@
 ;; Imports
 (load-file "~/.emacs.d/fm/helpers.el")
 
+;; Font
+(set-frame-font "Fira Mono 12" nil t)
 
 ;; Ido completion
 (setq ido-enable-flex-matching t)
