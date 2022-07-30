@@ -131,6 +131,8 @@ export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto/
 export JAVA_BIN=$JAVA_HOME/bin
 export PATH=$JAVA_BIN:$PATH
 export DRUID_JAVA_HOME=/usr/lib/jvm/java-8-amazon-corretto/
+export NIM_HOME=/usr/lib/nim-1.6.6/bin/
+export PATH=$NIM_HOME:$PATH
 
 export M2_HOME=/usr/lib/apache-maven-3.8.4/
 
@@ -175,3 +177,5 @@ alias mongoshquick='sudo mongosh --port 27017 -u "ferhad" -p --authenticationDat
 eval $(keychain --eval id_ed25519 -q)
 
 colorscript random
+
+alias src='cd /home/ferhad/Programming/'

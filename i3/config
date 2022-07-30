@@ -267,6 +267,8 @@ mode "$fan_control" {
 
 bindcode 71 mode "$fan_control"
 
+bindsym $mod+z exec boomer
+
 bindsym XF86PowerOff exec --no-startup-id suspend-i3
 
 exec --no-startup-id nitrogen --restore

@@ -16,6 +16,10 @@
 		  "NOW" "OPTIONAL" "REFERENCE"
 		  "IDEA" "HACK" "DONE")))
 
+(setq org-priority-faces '((?A . (:foreground "red" :weight 'bold))
+                           (?B . (:foreground "yellow"))
+                           (?C . (:foreground "green"))))
+
 (setq org-hide-emphasis-markers t)
 ;; (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
@@ -23,6 +27,7 @@
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c a") (kbd "C-u C-u C-u TAB"))))
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c <up>") 'org-priority-up)))
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c <down>") 'org-priority-down)))
+(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-<return>") (kbd "C-e C-m"))))
 
 (custom-theme-set-faces 'user
 	`(org-level-1
