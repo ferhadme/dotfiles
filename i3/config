@@ -262,14 +262,28 @@ mode "$fan_control" {
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindcode 71 mode "default"
+  bindcode $mod+71 mode "default"
 }
 
-bindcode 71 mode "$fan_control"
+bindcode $mod+71 mode "$fan_control"
 
 bindsym $mod+z exec boomer
 
 bindsym XF86PowerOff exec --no-startup-id suspend-i3
+
+exec --no-startup-id setxkbmap -layout us,az,ru
+
+mode "$keyboard_layout" {
+  bindsym u exec setxkbmap us
+  bindsym a exec setxkbmap az
+  bindsym r exec setxkbmap ru
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindcode $mod+49 mode "default"
+}
+
+bindcode $mod+49 mode "$keyboard_layout"
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xmodmap ~/.Xmodmap
