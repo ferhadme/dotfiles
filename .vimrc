@@ -24,3 +24,5 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
 nnoremap <space> i<space><esc>l
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
