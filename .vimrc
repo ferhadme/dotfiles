@@ -1,4 +1,4 @@
-colorscheme default
+colorscheme pablo
 syntax on
 filetype plugin indent on
 set tabstop=2
