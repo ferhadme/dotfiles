@@ -50,6 +50,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal --hide-menubar
+bindsym $mod+Shift+Return exec gnome-terminal --hide-menubar --profile=blue
 
 # kill focused window
 bindsym $mod+q kill
