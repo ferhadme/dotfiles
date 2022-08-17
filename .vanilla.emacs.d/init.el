@@ -39,7 +39,11 @@
 (delete-selection-mode 1)
 (setq visible-bell t)
 
-(setq-default show-trailing-whitespace t)
+(global-whitespace-mode)
+(setq global-whitespace-display-mappings '((space-mark 32 [183] [46])))
+(setq whitespace-space '(:foreground "#34363A"))
+(setq whitespace-style '(face spaces space-mark))
+;; (setq-default show-trailing-whitespace t)
 
 (set-frame-parameter (selected-frame) 'alpha '(99 . 99))
 (add-to-list 'default-frame-alist '(alpha . (99 . 99)))
@@ -58,8 +62,8 @@
 
 ;; Enable relative line numbers for some modes
 (dolist (mode '(text-mode-hook
-                prog-mode-hook
-                conf-mode-hook))
+		prog-mode-hook
+		conf-mode-hook))
   (add-hook mode (lambda ()
 		   (display-line-numbers-mode 1)
 		   (setq display-line-numbers-type 'relative))))

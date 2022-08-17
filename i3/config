@@ -212,6 +212,7 @@ mode "$application_launcher" {
   bindsym e exec emacs
   bindsym s exec slack
   bindsym m exec flatpak run com.spotify.Client
+  bindsym t exec telegram
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -276,7 +277,6 @@ exec --no-startup-id setxkbmap -layout us,az,ru
 mode "$keyboard_layout" {
   bindsym u exec setxkbmap us
   bindsym a exec setxkbmap az
-  bindsym r exec setxkbmap ru
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
