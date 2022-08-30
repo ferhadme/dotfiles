@@ -239,3 +239,22 @@
   (setq backup-directory-alist `(("." . ,backupdir)))
   (setq auto-save-file-name-transforms
 	`((".*" ,backupdir t))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(org-alert cmake-mode yasnippet yaml-mode vi-tilde-fringe use-package treemacs smex shrink-path rich-minority powerline org-bullets multiple-cursors move-text markdown-mode magit hl-todo gruber-darker-theme go-mode company color-theme)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-block ((t (:background "#262922"))))
+ '(org-level-1 ((t (:foreground "#97A7C8" :weight normal))))
+ '(org-level-2 ((t (:foreground "#FFDD35" :weight normal))))
+ '(org-level-3 ((t (:foreground "#F4F4FF" :weight normal))))
+ '(org-level-4 ((t (:foreground "#CC8C3C" :weight normal))))
+ '(org-level-5 ((t (:foreground "#CA26D9" :weight normal))))
+ '(org-priority ((t (:foreground "#b9fbc0" :weight normal)))))
