@@ -1,20 +1,14 @@
 ;; Org mode configurations
 (setq org-todo-keyword-faces
       '(
-	("HACK" . (:foreground "blue" :weight normal))
 	("PROGRESS" . (:foreground "purple" :weight normal))
-	("IDEA" . (:foreground "yellow" :weight normal))
-	("REFERENCE" . (:foreground "cyan" :weight normal))
-	("URGENT" . (:foreground "#C03D29" :weight italic))
 	("NOW" . (:foreground "#9E8EC0" :weight bold))
-	("BUG" . (:foreground "#FF0000" :weight bold))
-	("OPTIONAL" . (:foreground "#74b3ce" :weight bold))
+	("CANCELED" . (:foreground "#74b3ce" :weight normal))
 	))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "URGENT" "BUG" "PROGRESS"
-		  "NOW" "OPTIONAL" "REFERENCE"
-		  "IDEA" "HACK" "DONE")))
+      '((sequence "TODO" "PROGRESS" "CANCELED"
+		  "NOW" "DONE")))
 
 (setq org-priority-faces '((?A . (:foreground "red" :weight 'bold))
                            (?B . (:foreground "yellow"))
@@ -33,9 +27,9 @@
 	`(org-level-1
 	  ((t (:foreground "#97A7C8" :weight normal))))
 	`(org-level-2
-	  ((t (:foreground "#FFDD35" :weight normal))))
-	`(org-level-3
 	  ((t (:foreground "#F4F4FF" :weight normal))))
+	`(org-level-3
+	  ((t (:foreground "#FFDD35" :weight normal))))
 	`(org-level-4
 	  ((t (:foreground "#CC8C3C" :weight normal))))
 	`(org-level-5
