@@ -38,10 +38,13 @@
 (show-paren-mode 1)
 (delete-selection-mode 1)
 (setq visible-bell t)
+(global-unset-key (kbd "C-z"))
+
 
 (global-whitespace-mode)
 (setq global-whitespace-display-mappings '((space-mark 32 [183] [46])))
-(setq whitespace-space '(:foreground "#34363A"))
+;; (setq whitespace-space '(:foreground "#34363A"))
+(setq whitespace-space '(:foreground "#425872"))
 (setq whitespace-style '(face spaces space-mark))
 ;; (setq-default show-trailing-whitespace t)
 
@@ -63,14 +66,14 @@
 ;; Enable relative line numbers for some modes
 (dolist (mode '(text-mode-hook
 		prog-mode-hook
+		org-mode-hook
 		conf-mode-hook))
   (add-hook mode (lambda ()
 		   (display-line-numbers-mode 1)
 		   (setq display-line-numbers-type 'relative))))
 
 ;; Override some modes which derive from the above
-(dolist (mode '(org-mode-hook
-		term-mode-hook
+(dolist (mode '(term-mode-hook
 		shell-mode-hook
 		eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
@@ -208,7 +211,9 @@
 
 
 ;; Theme from https://github.com/rexim/gruber-darker-theme
-(load-theme 'gruber-darker t)
+;; (load-theme 'gruber-darker t)
+(load-theme 'misterioso t)
+
 
 ;; Used snippets is https://github.com/doomemacs/snippets
 (add-to-list 'load-path
