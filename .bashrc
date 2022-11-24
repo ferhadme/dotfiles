@@ -179,3 +179,5 @@ eval $(keychain --eval id_ed25519 -q)
 colorscript random
 
 alias src='cd /home/ferhad/Programming/'
+
+xmodmap ~/.Xmodmap

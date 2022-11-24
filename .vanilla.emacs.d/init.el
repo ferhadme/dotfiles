@@ -37,7 +37,7 @@
 (tooltip-mode -1)
 (show-paren-mode 1)
 (delete-selection-mode 1)
-(setq visible-bell t)
+;; (setq visible-bell t)
 (global-unset-key (kbd "C-z"))
 
 
@@ -93,6 +93,7 @@
 (setq eshell-prompt-function
       (lambda nil
 	"λ "))
+(setq eshell-prompt-regexp "λ ")
 
 (global-set-key (kbd "C-c C-e") 'eshell)
 (global-set-key (kbd "C-c c c") 'compile)
@@ -212,7 +213,8 @@
 
 ;; Theme from https://github.com/rexim/gruber-darker-theme
 ;; (load-theme 'gruber-darker t)
-(load-theme 'misterioso t)
+;; (load-theme 'misterioso t)
+(load-theme 'wombat t)
 
 
 ;; Used snippets is https://github.com/doomemacs/snippets
