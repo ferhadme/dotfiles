@@ -156,7 +156,7 @@ intro_em() {
 }
 
 os_info() {
-    neofetch -L --ascii_distro GNU
+    neofetch -L --ascii_distro darkos
 }
 
 # [[ $- != *i* ]] && return
@@ -176,8 +176,8 @@ alias mongoshquick='sudo mongosh --port 27017 -u "ferhad" -p --authenticationDat
 
 eval $(keychain --eval id_ed25519 -q)
 
-colorscript random
-
 alias src='cd /home/ferhad/Programming/'
 
 xmodmap ~/.Xmodmap
+
+os_info
