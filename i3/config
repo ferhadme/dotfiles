@@ -292,3 +292,4 @@ bindcode $mod+49 mode "$keyboard_layout"
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xmodmap ~/.Xmodmap
 
+exec --no-startup-id touchegg

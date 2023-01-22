@@ -159,8 +159,8 @@ os_info() {
     neofetch -L --ascii_distro GNU
 }
 
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+# [[ $- != *i* ]] && return
+# [[ -z "$TMUX" ]] && exec tmux
 
 set -o emacs
 export EDITOR='vim'

@@ -212,9 +212,9 @@
 
 
 ;; Theme from https://github.com/rexim/gruber-darker-theme
-;; (load-theme 'gruber-darker t)
+(load-theme 'gruber-darker t)
 ;; (load-theme 'misterioso t)
-(load-theme 'wombat t)
+;; (load-theme 'wombat t)
 
 
 ;; Used snippets is https://github.com/doomemacs/snippets
