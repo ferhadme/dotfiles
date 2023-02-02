@@ -180,4 +180,4 @@ alias src='cd /home/ferhad/Programming/'
 
 xmodmap ~/.Xmodmap
 
-os_info
+intro_em
