@@ -17,9 +17,8 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-font pango:Fira Sans Mono 10
+font pango:DejaVu Sans Mono 10
+#font pango:Fira Sans Mono 10
 
 floating_modifier $mod
 
@@ -193,9 +192,11 @@ bindsym $mod+r mode "resize"
 # Keybindings for controlling multiple monitors
 mode "$multiple_monitors" {
   # Connect to left monitor
-  bindsym c exec xrandr --output HDMI-1-1 --auto --left-of eDP
-  # Reset display after disconnecting to monitor
-  bindsym r exec xrandr -s 0
+  bindsym l exec xrandr --output HDMI-1-1 --auto --left-of eDP
+  # Connect to right monitor
+  bindsym r exec xrandr --output HDMI-1-1 --auto --right-of eDP
+  # Reset display after disconnecting from monitor
+  bindsym 0 exec xrandr -s 0
 
   bindsym Return mode "default"
   bindsym Escape mode "default"

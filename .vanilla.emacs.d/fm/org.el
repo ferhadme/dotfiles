@@ -3,11 +3,11 @@
       '(
 	("PROGRESS" . (:foreground "purple" :weight normal))
 	("NOW" . (:foreground "#9E8EC0" :weight bold))
-	("CANCELED" . (:foreground "#74b3ce" :weight normal))
+	("STOPPED" . (:foreground "#74b3ce" :weight normal))
 	))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "PROGRESS" "CANCELED"
+      '((sequence "TODO" "PROGRESS" "STOPPED"
 		  "NOW" "DONE")))
 
 (setq org-priority-faces '((?A . (:foreground "red" :weight 'bold))

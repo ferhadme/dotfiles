@@ -127,12 +127,14 @@ export PS1="$(whoami)\[\e[31m\] \[\e[m\]\[\e[31m\]:\[\e[m\]\[\e[31m\]: \[\e[m\]\
 export LSCOLORS=cxgxfxexbxegedabagacad
 
 export PATH=/home/ferhad/.local/bin:$PATH
-export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto/
+export JAVA_HOME=/home/ferhad/.jdks/corretto-17.0.8.1/
 export JAVA_BIN=$JAVA_HOME/bin
 export PATH=$JAVA_BIN:$PATH
 export DRUID_JAVA_HOME=/usr/lib/jvm/java-8-amazon-corretto/
 export NIM_HOME=/usr/lib/nim-1.6.6/bin/
 export PATH=$NIM_HOME:$PATH
+export RUST_HOME=~/.cargo/bin
+export PATH=$RUST_HOME:$PATH
 
 export M2_HOME=/usr/lib/apache-maven-3.8.4/
 
@@ -177,7 +179,13 @@ alias mongoshquick='sudo mongosh --port 27017 -u "ferhad" -p --authenticationDat
 eval $(keychain --eval id_ed25519 -q)
 
 alias src='cd /home/ferhad/Programming/'
+alias sl='sl -e'
 
 xmodmap ~/.Xmodmap
 
 intro_em
+. "$HOME/.cargo/env"
+
+export FLYCTL_INSTALL="/home/ferhad/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export KUBECONFIG=~/.kube/ozbet-prod-config
