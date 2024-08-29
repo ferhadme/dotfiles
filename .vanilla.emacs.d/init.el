@@ -212,10 +212,8 @@
 
 
 ;; Theme from https://github.com/rexim/gruber-darker-theme
-;; (load-theme 'gruber-darker t)
-;; (load-theme 'misterioso t)
-(load-theme 'wombat t)
-;; (load-theme 'whiteboard t)
+(load-theme 'gruber-darker t)
+;; (load-theme 'wombat t)
 
 
 ;; Used snippets is https://github.com/doomemacs/snippets
@@ -237,7 +235,6 @@
 
 ;; Org mode
 (load-file "~/.emacs.d/fm/org.el")
-
 
 ;; Taken from https://github.com/stapelberg/configfiles
 ;; Store backups and auto-save files in a single directory so that

@@ -188,4 +188,4 @@ intro_em
 
 export FLYCTL_INSTALL="/home/ferhad/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
-export KUBECONFIG=~/.kube/ozbet-prod-config
+# export KUBECONFIG=~/.kube/ozbet-prod-config

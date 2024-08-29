@@ -1,15 +1,6 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'ycm-core/YouCompleteMe'
-
-call vundle#end()
-
 filetype plugin indent on
 
 colorscheme pablo
@@ -30,6 +21,7 @@ set ruler
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
 highlight Comment ctermfg=green
+highlight LineNr ctermfg=yellow
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
@@ -37,3 +29,4 @@ nnoremap <space> i<space><esc>l
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 set encoding=utf-8
+set t_md=
