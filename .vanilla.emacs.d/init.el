@@ -212,9 +212,8 @@
 
 
 ;; Theme from https://github.com/rexim/gruber-darker-theme
-(load-theme 'gruber-darker t)
-;; (load-theme 'wombat t)
-
+;; (load-theme 'gruber-darker t)
+(load-theme 'doom-tomorrow-night t)
 
 ;; Used snippets is https://github.com/doomemacs/snippets
 (add-to-list 'load-path

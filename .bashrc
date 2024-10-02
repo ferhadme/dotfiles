@@ -93,6 +93,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF --color=auto'
+alias ls='ls -l'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -133,8 +134,8 @@ export PATH=$JAVA_BIN:$PATH
 export DRUID_JAVA_HOME=/usr/lib/jvm/java-8-amazon-corretto/
 export NIM_HOME=/usr/lib/nim-1.6.6/bin/
 export PATH=$NIM_HOME:$PATH
-export RUST_HOME=~/.cargo/bin
-export PATH=$RUST_HOME:$PATH
+#export RUST_HOME=~/.cargo/bin
+#export PATH=$RUST_HOME:$PATH
 
 export M2_HOME=/usr/lib/apache-maven-3.8.4/
 
@@ -184,8 +185,8 @@ alias sl='sl -e'
 xmodmap ~/.Xmodmap
 
 intro_em
-. "$HOME/.cargo/env"
 
 export FLYCTL_INSTALL="/home/ferhad/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # export KUBECONFIG=~/.kube/ozbet-prod-config
+. "$HOME/.cargo/env"

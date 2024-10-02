@@ -256,7 +256,8 @@ bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t ima
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-bindsym $mod+Escape exec i3lock --color=000000
+#bindsym $mod+Escape exec i3lock --color=000000
+bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/lockscreen.png -f -t
 
 bindsym XF86MonBrightnessUp exec b-control --inc 10
 bindsym XF86MonBrightnessDown exec b-control --dec 10
