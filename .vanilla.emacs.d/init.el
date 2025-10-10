@@ -153,8 +153,10 @@
         indent-tabs-mode nil))
 
 (add-hook 'go-mode-hook 'tab-width-config)
-(add-hook 'makefile-hook 'tab-width-config)
+(add-hook 'makefile-mode-hook 'tab-width-config)
 (add-hook 'conf-mode-hook 'tab-width-config)
+(add-hook 'rust-mode-hook 'tab-width-config)
+(add-hook 'perl-mode-hook 'tab-width-config)
 
 
 ;; Company code completion
@@ -245,7 +247,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(company doom-themes hl-todo magit move-text multiple-cursors
-	     org-bullets smex vi-tilde-fringe yasnippet)))
+	     org-bullets rust-mode smex vi-tilde-fringe yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
