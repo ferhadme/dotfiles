@@ -133,7 +133,6 @@
 (global-set-key (kbd "C-c M-x") 'execute-extended-command)
 
 
-;; C programming configurations
 (setq-default c-basic-offset 4
               c-default-style '((java-mode . "java")
                                 (awk-mode . "awk")
@@ -141,14 +140,18 @@
 
 (add-hook 'c-mode-hook (lambda ()
                          (interactive)
-                         (c-toggle-comment-style -1)))
+                         (c-toggle-comment-style -1)
+                         ;; Use spaces instead of tabs
+                         (setq c-basic-offset 4
+                               tab-width 4
+                               indent-tabs-mode nil)))
 
+;; For other modes
 (defun tab-width-config ()
-(setq c-basic-offset 4
-      tab-width 4
-      indent-tabs-mode t))
+  (setq c-basic-offset 4
+        tab-width 4
+        indent-tabs-mode nil))
 
-;; Go, Makefile tab width
 (add-hook 'go-mode-hook 'tab-width-config)
 (add-hook 'makefile-hook 'tab-width-config)
 (add-hook 'conf-mode-hook 'tab-width-config)
@@ -235,3 +238,25 @@
   (setq backup-directory-alist `(("." . ,backupdir)))
   (setq auto-save-file-name-transforms
 	`((".*" ,backupdir t))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(company doom-themes hl-todo magit move-text multiple-cursors
+	     org-bullets smex vi-tilde-fringe yasnippet)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-block ((t (:background "#262922"))))
+ '(org-level-1 ((t (:foreground "#97A7C8" :weight normal))))
+ '(org-level-2 ((t (:foreground "#F4F4FF" :weight normal))))
+ '(org-level-3 ((t (:foreground "#FFDD35" :weight normal))))
+ '(org-level-4 ((t (:foreground "#CC8C3C" :weight normal))))
+ '(org-level-5 ((t (:foreground "#CA26D9" :weight normal))))
+ '(org-priority ((t (:foreground "#b9fbc0" :weight normal)))))
+
+(setq mac-command-modifier 'control)
