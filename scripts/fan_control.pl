@@ -86,11 +86,11 @@ sub status {
     if ($current_mode == SILENT) {
         $current_mode_format = "silent";
     } elsif ($current_mode == BALANCE) {
-	$current_mode_format = "balance";
+        $current_mode_format = "balance";
     } elsif ($current_mode == TURBO) {
-	$current_mode_format = "turbo";
+        $current_mode_format = "turbo";
     } else {
-	$current_mode_format = "undefined";
+        $current_mode_format = "undefined";
     }
     close(FILE);
     return $current_mode_format;

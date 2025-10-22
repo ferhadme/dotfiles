@@ -8,20 +8,20 @@
 set -e
 
 usage() {
-	echo "Usage: $0 mode
+    echo "Usage: $0 mode
   mode:{vanilla|doom}"
 }
 
 if [[ $# -ne 1 ]]; then
-	usage
-	exit 1
+    usage
+    exit 1
 fi
 
 MODE=$1
 
 if [[ $MODE != vanilla && $MODE != doom ]]; then
-	usage
-	exit 1
+    usage
+    exit 1
 fi
 
 
