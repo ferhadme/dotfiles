@@ -21,6 +21,8 @@ alias ed="ed -p ':'"
 alias setclip='xclip -selection c'
 
 alias src='cd ~/Programming'
+
+alias autoremove = 'pacman -Qdtq | pacman -Rs -'
 ### Aliases_End
 
 ### History
@@ -41,8 +43,6 @@ intro_em() {
     echo "¯\_(ツ)_/¯"
     echo
 }
-
-
 ### PS1_End
 
 ### Exports

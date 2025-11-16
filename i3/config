@@ -185,7 +185,7 @@ bindsym $mod+m mode "$multiple_monitors"
 
 # Keybindings for launching applications
 mode "$application_launcher" {
-  bindsym b exec google-chrome %u
+  bindsym b exec chromium %u
   bindsym f exec nautilus
   bindsym j exec nautilus ~/Downloads
   bindsym e exec emacs
