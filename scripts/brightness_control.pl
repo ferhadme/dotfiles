@@ -23,16 +23,24 @@ use warnings;
 use v5.32;
 
 use constant {
-    BRIGHTNESS_FILELOC0 => '/sys/class/backlight/amdgpu_bl0/brightness',
-    BRIGHTNESS_FILELOC1 => '/sys/class/backlight/amdgpu_bl1/brightness',
-    MAX_BRIGHTNESS_FILELOC0 => '/sys/class/backlight/amdgpu_bl0/max_brightness',
-    MAX_BRIGHTNESS_FILELOC1 => '/sys/class/backlight/amdgpu_bl1/max_brightness',
     MIN_BRIGHTNESS => 0, # blank screen
 
     # In newer kernels, the AMDGPU driver switched to using the
     # firmware’s native hardware scale for backlight, which can be much higher precision than old kernels (0-255)
     DEFAULT_BRIGHTNESS => 52000
 };
+
+use constant BRIGHTNESS_FILELOCS => [
+    '/sys/class/backlight/amdgpu_bl0/brightness',
+    '/sys/class/backlight/amdgpu_bl1/brightness',
+    '/sys/class/backlight/amdgpu_bl2/brightness'
+];
+
+use constant MAX_BRIGHTNESS_FILELOCS => [
+    '/sys/class/backlight/amdgpu_bl0/max_brightness',
+    '/sys/class/backlight/amdgpu_bl1/max_brightness',
+    '/sys/class/backlight/amdgpu_bl2/max_brightness'
+];
 
 my $max_brightness;
 my $brightness_fileloc;
@@ -58,7 +66,7 @@ sub main {
         exit;
     }
 
-    $brightness_fileloc = (-e BRIGHTNESS_FILELOC0) ? BRIGHTNESS_FILELOC0 : BRIGHTNESS_FILELOC1;
+    $brightness_fileloc = (grep { -e $_ } @{BRIGHTNESS_FILELOCS()})[0];
     my $current_brightness = &get_brightness_value_from($brightness_fileloc);
 
     if ($option eq '--get') {
@@ -98,7 +106,7 @@ sub main {
 }
 
 sub init_max_brightness {
-    $max_brightness_fileloc = (-e MAX_BRIGHTNESS_FILELOC0) ? MAX_BRIGHTNESS_FILELOC0 : MAX_BRIGHTNESS_FILELOC1;
+    $max_brightness_fileloc = (grep { -e $_ } @{MAX_BRIGHTNESS_FILELOCS()})[0];
     $max_brightness = &get_brightness_value_from($max_brightness_fileloc);
 }
 

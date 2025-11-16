@@ -21,8 +21,6 @@ alias ed="ed -p ':'"
 alias setclip='xclip -selection c'
 
 alias src='cd ~/Programming'
-
-alias autoremove = 'pacman -Qdtq | pacman -Rs -'
 ### Aliases_End
 
 ### History
@@ -50,6 +48,10 @@ export LSCOLORS=cxgxfxexbxegedabagacad
 export CLICOLOR=1
 export EDITOR='vim'
 ### Exports_End
+
+### PATH
+export PATH=$PATH:~/dotfiles/scripts/
+### PATH_End
 
 
 ### Enable programmable completions

@@ -186,12 +186,9 @@ bindsym $mod+m mode "$multiple_monitors"
 # Keybindings for launching applications
 mode "$application_launcher" {
   bindsym b exec chromium %u
-  bindsym f exec nautilus
-  bindsym j exec nautilus ~/Downloads
+  bindsym f exec thunar
+  bindsym j exec thunar ~/Downloads
   bindsym e exec emacs
-  bindsym s exec slack
-  bindsym m exec flatpak run com.spotify.Client
-  bindsym t exec telegram
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -231,11 +228,13 @@ bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewi
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 #bindsym $mod+Escape exec i3lock --color=000000
-bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/lockscreen.png -f -t
+bindsym $mod+Escape exec i3lock -i ../wallpapers/from-unsplash.jpg -f -t
 
+# b-control script: ../scripts/brightness_control.pl
 bindsym XF86MonBrightnessUp exec b-control --inc 10
 bindsym XF86MonBrightnessDown exec b-control --dec 10
 
+# f-control script: ../scripts/fan_control.pl
 mode "$fan_control" {
   bindsym t exec f-control turbo
   bindsym s exec f-control silent
