@@ -18,7 +18,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 10
-#font pango:Fira Sans Mono 10
+# font pango:Fira Sans Mono 10
 
 floating_modifier $mod
 
@@ -48,9 +48,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --hide-menubar
-bindsym $mod+Shift+Return exec gnome-terminal --hide-menubar --profile=blue
-bindsym $mod+Ctrl+Return exec cool-retro-term
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
