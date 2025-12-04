@@ -21,6 +21,7 @@ alias ed="ed -p ':'"
 alias setclip='xclip -selection c'
 
 alias src='cd ~/Programming'
+alias vi=vim
 ### Aliases_End
 
 ### History

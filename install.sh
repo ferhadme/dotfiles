@@ -10,7 +10,7 @@ cd ~
 rm -rf ~/.config/i3 ~/.config/i3-status ~/.config/dunst ~/.tmux.conf ~/.bashrc ~/.emacs.d ~/.gitconfig ~/.vimrc
 
 ln -sf ~/dotfiles/i3 ~/.config/i3
-ln -sf ~/dotfiles/i3-status ~/.config/i3-status
+ln -sf ~/dotfiles/i3status ~/.config/i3status
 
 ln -sf ~/dotfiles/dunst ~/.config/dunst
 
