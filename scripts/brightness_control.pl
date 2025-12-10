@@ -90,32 +90,37 @@ sub main {
     }
 
     if ($option eq '--default') {
-        &set_brightness_value(DEFAULT_BRIGHTNESS);
+        &set_brightness(DEFAULT_BRIGHTNESS);
         exit;
     }
 
     my $value = &get_value;
     if ($option eq '--set') {
-        &set_brightness_value($value);
+        &set_brightness($value);
+        exit;
+    }
+
+    if ($option eq '--setp') {
+        &set_brightness_as_perc($value);
         exit;
     }
 
     if ($option eq '--inc') {
         my $inc_brightness = $current_brightness + $value;
         if ($inc_brightness > $max_brightness) {
-            &set_brightness_value($max_brightness);
+            &set_brightness($max_brightness);
             exit;
         }
-        &set_brightness_value($inc_brightness);
+        &set_brightness($inc_brightness);
     }
 
     if ($option eq '--dec') {
         my $dec_brightness = $current_brightness - $value;
         if ($dec_brightness < MIN_BRIGHTNESS) {
-            &set_brightness_value(MIN_BRIGHTNESS);
+            &set_brightness(MIN_BRIGHTNESS);
             exit;
         }
-        &set_brightness_value($dec_brightness);
+        &set_brightness($dec_brightness);
     }
 }
 
@@ -132,11 +137,18 @@ sub get_brightness_value_from {
     $val;
 }
 
-sub set_brightness_value {
+sub set_brightness {
     ($_) = (@_);
     open(OUT, '>', $brightness_fileloc) or die $!;
     print OUT $_;
     close(OUT);
+}
+
+sub set_brightness_as_perc {
+    ($_) = (@_);
+    my $value = int(($max_brightness * $_) / 100);
+
+    &set_brightness($value);
 }
 
 sub get_value {
