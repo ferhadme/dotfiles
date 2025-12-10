@@ -68,4 +68,3 @@ load {
 read_file uptime {
   path = "/proc/uptime"
 }
-

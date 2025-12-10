@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+font pango:Fira Mono 10
 # font pango:Fira Sans Mono 10
 
 floating_modifier $mod
@@ -231,14 +231,16 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 bindsym $mod+Escape exec i3lock -i ../wallpapers/from-unsplash.jpg -f -t
 
 # b-control script: ../scripts/brightness_control.pl
-bindsym XF86MonBrightnessUp exec b-control --inc 10
-bindsym XF86MonBrightnessDown exec b-control --dec 10
+# bindsym XF86MonBrightnessUp exec b-control --inc 10
+# bindsym XF86MonBrightnessDown exec b-control --dec 10
+bindsym XF86MonBrightnessUp exec sudo b-control --inc 10
+bindsym XF86MonBrightnessDown exec sudo b-control --dec 10
 
 # f-control script: ../scripts/fan_control.pl
 mode "$fan_control" {
-  bindsym t exec f-control turbo
-  bindsym s exec f-control silent
-  bindsym b exec f-control balance
+  bindsym t exec sudo f-control turbo
+  bindsym s exec sudo f-control silent
+  bindsym b exec sudo f-control balance
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -264,7 +266,5 @@ mode "$keyboard_layout" {
 
 bindcode $mod+49 mode "$keyboard_layout"
 
-exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/from-unsplash.jpg
-exec --no-startup-id xmodmap ~/.Xmodmap
-
-exec --no-startup-id touchegg
+exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/wallpaper.png
+exec --no-startup-id xmodmap ~/dotfiles/.Xmodmap

@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-i3lock -i ~/dotfiles/wallpapers/from-unsplash.jpg-f -t &&
+i3lock -i ~/dotfiles/wallpapers/wallpaper.png -t &&
     sh -c "echo mem > /sys/power/state"

@@ -51,7 +51,6 @@ export EDITOR='vim'
 ### Exports_End
 
 ### PATH
-export PATH=$PATH:~/dotfiles/scripts/
 ### PATH_End
 
 

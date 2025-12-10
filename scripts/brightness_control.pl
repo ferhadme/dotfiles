@@ -27,7 +27,10 @@ use constant {
 
     # In newer kernels, the AMDGPU driver switched to using the
     # firmware’s native hardware scale for backlight, which can be much higher precision than old kernels (0-255)
-    DEFAULT_BRIGHTNESS => 52000
+    DEFAULT_BRIGHTNESS => 52000,
+
+    DEFAULT_BRIGHTNESS_P => 90,
+    MAX_BRIGHTNESS_P => 100
 };
 
 use constant BRIGHTNESS_FILELOCS => [
@@ -49,9 +52,13 @@ my $max_brightness_fileloc;
 my %opt = qw /
    --help --help
    --get --get
+   --getp --getp
    --set --set
+   --setp --setp
    --inc --inc
+   --incp --incp
    --dec --dec
+   --decp --decp
    --default --default
 /;
 
@@ -62,6 +69,7 @@ sub main {
     }
 
     if ($option eq '--help') {
+        print "----";
         print &usage;
         exit;
     }
@@ -74,12 +82,18 @@ sub main {
         exit;
     }
 
+    &init_max_brightness;
+
+    if ($option eq '--getp') {
+        print &get_brightness_as_perc($current_brightness) . "\n";
+        exit;
+    }
+
     if ($option eq '--default') {
         &set_brightness_value(DEFAULT_BRIGHTNESS);
         exit;
     }
 
-    &init_max_brightness;
     my $value = &get_value;
     if ($option eq '--set') {
         &set_brightness_value($value);
@@ -131,10 +145,16 @@ sub get_value {
         or die "Brightness value is invalid\n";
 }
 
+sub get_brightness_as_perc {
+    ($_) = (@_);
+    return int(($_ * 100) / $max_brightness);
+}
+
 sub usage {
     "Usage: ./brightness_control option\n" .
         "Options:\n" .
         "\t--get\n" .
+        "\t--getp\n" .
         "\t--set <value>\n" .
         "\t--inc <value>\n" .
         "\t--dec <value>\n" .
