@@ -215,6 +215,7 @@ bindsym $mod+c mode "$media_control"
 # finds out, if available)
 bar {
   status_command i3status -c
+  # status_command ~/dotfiles/scripts/brightness-i3-status.sh
 }
 
 ### Taken from https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
@@ -231,10 +232,8 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 bindsym $mod+Escape exec i3lock -i ../wallpapers/from-unsplash.jpg -f -t
 
 # b-control script: ../scripts/brightness_control.pl
-# bindsym XF86MonBrightnessUp exec b-control --inc 10
-# bindsym XF86MonBrightnessDown exec b-control --dec 10
-bindsym XF86MonBrightnessUp exec sudo b-control --inc 10
-bindsym XF86MonBrightnessDown exec sudo b-control --dec 10
+bindsym XF86MonBrightnessUp exec sudo b-control --incp 10
+bindsym XF86MonBrightnessDown exec sudo b-control --decp 10
 
 # f-control script: ../scripts/fan_control.pl
 mode "$fan_control" {
