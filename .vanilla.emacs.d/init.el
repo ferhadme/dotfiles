@@ -161,6 +161,7 @@
 (add-hook 'conf-mode-hook 'tab-width-config)
 (add-hook 'rust-mode-hook 'tab-width-config)
 (add-hook 'perl-mode-hook 'tab-width-config)
+(add-hook 'js-mode-hook 'tab-width-config)
 
 
 ;; Highlight todo keyword faces
