@@ -256,6 +256,10 @@ exec --no-startup-id feh --bg-scale ~/Pictures/wallhaven-blade-runner.png
 # Start custom .Xmodmap script, which swaps Caps lock and R Ctrl keys
 exec --no-startup-id xmodmap ~/dotfiles/.Xmodmap
 
+# Start picom compositor. By default picom loads ~/.config/picom/picom.conf
+# which is symlinked by ../picom/picom.conf
+exec --no-startup-id picom
+
 # i3-gaps
 gaps inner 5px
 smart_gaps on
