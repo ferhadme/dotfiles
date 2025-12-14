@@ -186,13 +186,13 @@ mode "$media_control" {
 
 bindsym $mod+c mode "$media_control"
 
-# Start i3bar to display a workspace bar
-bar {
-  status_command i3status -c
+# Start i3status to display a status bar. But I prefer polybar for its flexibility
+# bar {
+#   status_command i3status -c
 
 # Custom i3bar that also shows screen brightness, but I don't use it since it's so slow
-  # status_command ~/dotfiles/scripts/brightness-i3-status.sh
-}
+#   status_command ~/dotfiles/scripts/brightness-i3-status.sh
+# }
 
 
 ### Taken from https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
@@ -259,6 +259,9 @@ exec --no-startup-id xmodmap ~/dotfiles/.Xmodmap
 # Start picom compositor. By default picom loads ~/.config/picom/picom.conf
 # which is symlinked by ../picom/picom.conf
 exec --no-startup-id picom
+
+# Start polybar as status bar
+exec_always --no-startup-id ~/dotfiles/scripts/launch-polybar.sh
 
 # i3-gaps
 gaps inner 5px
