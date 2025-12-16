@@ -212,8 +212,8 @@ bindsym $mod+Escape exec i3lock -i ~/Pictures/arch.png -f -t
 
 # Brightness control with traditional F7-F8 keys
 # b-control script: ../scripts/brightness_control.pl
-bindsym XF86MonBrightnessUp exec sudo b-control --incp 10
-bindsym XF86MonBrightnessDown exec sudo b-control --decp 10
+bindsym XF86MonBrightnessUp exec sudo b-control --incp 5
+bindsym XF86MonBrightnessDown exec sudo b-control --decp 5
 
 # Fan control
 # f-control script: ../scripts/fan_control.pl
