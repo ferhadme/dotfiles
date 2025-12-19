@@ -4,22 +4,34 @@ set -e
 
 cd ~
 
-# git clone https://github.com/ferhadme/dotfiles.git
+git clone https://github.com/ferhadme/dotfiles.git
 
-# Reset existing configurations
-rm -rf ~/.config/i3 ~/.config/i3-status ~/.config/dunst ~/.tmux.conf ~/.bashrc ~/.emacs.d ~/.gitconfig ~/.vimrc
+ln -sfv ~/dotfiles/.vanilla.emacs.d ~/.emacs.d
 
-ln -sf ~/dotfiles/i3 ~/.config/i3
-ln -sf ~/dotfiles/i3status ~/.config/i3status
+ln -sfv ~/dotfiles/.vimrc ~/.vimrc
 
-ln -sf ~/dotfiles/dunst ~/.config/dunst
+ln -sfv ~/dotfiles/.ideavimrc ~/.ideavimrc
 
-ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sfv ~/dotfiles/i3 ~/.config/i3
 
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+ln -sfv ~/dotfiles/i3status ~/.config/i3status
 
-ln -sf ~/dotfiles/.vanilla.emacs.d ~/.emacs.d
+ln -sfv ~/dotfiles/polybar ~/.config/polybar
 
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sfv ~/dotfiles/picom ~/.config/picom
 
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sfv ~/dotfiles/alacritty ~/.config/alacritty
+
+ln -sfv ~/dotfiles/dunst ~/.config/dunst
+
+ln -sfv ~/dotfiles/.bashrc ~/.bashrc
+
+ln -sfv ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+ln -sfv ~/dotfiles/.gitconfig ~/.gitconfig
+
+ln -sfv ~/dotfiles/.mongoshrc.js ~/.mongoshrc.js
+
+ln -sfv ~/dotfiles/.psqlrc ~/.psqlrc
+
+ln -sfv ~/dotfiles/.xprofile ~/.xprofile

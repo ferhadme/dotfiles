@@ -60,7 +60,7 @@ sub main {
         change_fan_mode(TURBO);
         change_status_log($current_fan_mode, 'turbo');
     } elsif ($option eq 'status') {
-        print "Current fan mode is ${current_fan_mode}\n";
+        print "${current_fan_mode}\n";
     } else {
         print "fan_control: invalid argument\n";
         &print_usage;
