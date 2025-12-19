@@ -3,7 +3,7 @@
 ### About
 Configuration files for a minimalistic Arch Linux desktop environment optimized for keyboard-driven workflows, speed, and minimal RAM/CPU usage.
 
-On a typical daily workload (text editors, browser, terminal, media players) on a `16 GB` RAM system with an `8-core` AMD Ryzen 7 CPU, this setup uses `<4 GB` RAM and `~1%` CPU. In an idle state, memory usage stays below `2GB`, with CPU usage below `10%`.
+On a typical daily workload (text editors, browser, terminal, media players) on a `16 GB` RAM system with an `8-core` AMD Ryzen 7 CPU, this setup uses `<4 GB` RAM and `<10%` CPU. In an idle state, memory usage stays below `2GB`, with CPU usage below `<2%`.
 
 <img src="res/desktop.png">
 
