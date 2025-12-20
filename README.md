@@ -77,12 +77,13 @@ On a typical daily workload (text editors, browser, terminal, media players) on 
 
 
 ### Installation
-**This script will delete existing configuration files and replace them with symlinks from this repository.**
-
-### Notes
-- Probably will not work if you're using Wayland display server
-- Some scripts require root access or specific hardware (e.g., ASUS laptops)
+**This script will delete existing configuration files and replace them with symlinks from this repository**
 
 ```sh
 curl https://raw.githubusercontent.com/ferhadme/dotfiles/refs/heads/master/install.sh | sh
 ```
+
+### Notes
+- Probably will not work if you're using Wayland display server
+- Some scripts require root access or specific hardware (e.g., ASUS laptops). You can add these files to `sudoers` if you don't want to give non-root execute permission after each startup
+
