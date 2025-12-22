@@ -27,6 +27,8 @@ On a typical daily workload (text editors, browser, terminal, media players) on 
 
 **`i3status`** - Lightweight i3status bar
 
+**`ly`** - Ly Display Manager. Log in and starts X11 server
+
 **`polybar`** - i3 compatible status bar. Better than i3status for its flexibility and customizability
 
 **`picom`** - Lightweight X11 compositor for using with i3 since it doesn't provide compositing
@@ -52,6 +54,8 @@ On a typical daily workload (text editors, browser, terminal, media players) on 
 **`.Xmodmap`** - Swaps Caps Lock and Left Ctrl on Xorg keyboard layout
 
 **`.xprofile`** - X user session initializer
+
+**`.xinitrc`** - For manually starting i3 with `startx`. Unnecessary if you're using Display Manager (ly, lightdm, xdm etc)
 
 #### Scripts
 
