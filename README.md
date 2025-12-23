@@ -61,7 +61,7 @@ On a typical daily workload (text editors, browser, terminal, media players) on 
 
 **`scripts/brightness-i3-status.sh`** - Workaround script for displaying brightness on i3status bar, since i3status doesn't have brightness module. Used in i3status configuration file
 
-**`scripts/brightness_control.pl`** - Perl script for changing brightness of screen by modifying state of Kernel `/sys/class/backlight module`. It handles value and percentage based brightness changes well. Used in polybar, i3 configuration files
+**`scripts/brightness_control.pl`** - Perl script for changing brightness of screen by modifying state of Kernel `/sys/class/backlight module`. It handles value and percentage based brightness changes well. Used in polybar, i3, ly configuration files
 
 **`scripts/fan-control.pl`** - Perl script for controlling fan mode (silent, balance, turbo) by modifying state of Kernel `asus-nb-wmi module` on Asus laptops. Used in polybar, i3 configuration files
 
