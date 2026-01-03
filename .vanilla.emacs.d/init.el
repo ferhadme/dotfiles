@@ -215,7 +215,7 @@
 
 ;; Used snippets are https://github.com/doomemacs/snippets
 (add-to-list 'load-path
-             "~/.emacs.d/snippets")
+             "~/dotfiles/.vanilla.emacs.d/snippets/")
 (require 'yasnippet)
 (yas-global-mode 1)
 

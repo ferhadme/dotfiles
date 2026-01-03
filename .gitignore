@@ -8,7 +8,6 @@
 .vanilla.emacs.d/.mc-lists.el
 .vanilla.emacs.d/.org-id-locations
 .vanilla.emacs.d/smex-items
-.vanilla.emacs.d/snippets
 .vanilla.emacs.d/transient
 .vanilla.emacs.d/url
 .vanilla.emacs.d/games
