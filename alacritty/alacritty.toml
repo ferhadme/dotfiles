@@ -3,3 +3,6 @@ style = { shape = "Block", blinking = "On" }
 
 [mouse]
 hide_when_typing = true
+
+[font]
+normal = { family = "Fira Mono" }
