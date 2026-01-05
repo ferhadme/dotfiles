@@ -103,6 +103,12 @@
 (global-set-key (kbd "M-n") 'scroll-up-line)
 (global-set-key (kbd "M-p") 'scroll-down-line)
 
+;; Some modes like man-mode overwrites global scrolling keybindings
+(add-hook 'Man-mode-hook
+          (lambda ()
+	    (local-set-key (kbd "M-n") #'scroll-up-line)
+	    (local-set-key (kbd "M-p") #'scroll-down-line)))
+
 (global-set-key (kbd "M-o") 'other-window)
 
 (global-set-key (kbd "C-<return>") (kbd "C-e C-m"))
