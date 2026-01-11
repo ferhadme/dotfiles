@@ -2,7 +2,6 @@
 # name: ifdef
 # key: ifdef
 # uuid: ifdef
-# condition: (doom-snippets-bolp)
 # --
 #ifdef ${1:MACRO}
 

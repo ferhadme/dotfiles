@@ -53,6 +53,7 @@ export EDITOR='vim'
 ### PATH
 export JAVA_HOME=$PATH:/opt/amazon-corretto-21/
 export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:$HOME/.local/bin
 ### PATH_End
 
 
