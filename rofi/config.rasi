@@ -1,0 +1,19 @@
+/* Built in Rofi theme */
+@theme "/usr/share/rofi/themes/Monokai.rasi"
+
+configuration {
+  modes: "drun";
+  font: "Fira Mono 12";
+  show-icons: true;
+  display-drun: "Applications";
+  matching: "fuzzy";
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}

@@ -37,6 +37,8 @@ On a typical daily workload (text editors, browser, terminal, media players) on 
 
 **`dunst`** - Customizable notification daemon
 
+**`rofi`** - Application launcher
+
 #### Shell & CLI
 
 **`.bashrc`** - Bash shell configuration (aliases, PS1, exports, autocompletion)

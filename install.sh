@@ -24,6 +24,8 @@ ln -sfv ~/dotfiles/alacritty ~/.config/alacritty
 
 ln -sfv ~/dotfiles/dunst ~/.config/dunst
 
+ln -sfv ~/dotfiles/rofi ~/.config/rofi
+
 ln -sfv ~/dotfiles/.bashrc ~/.bashrc
 
 ln -sfv ~/dotfiles/.tmux.conf ~/.tmux.conf
