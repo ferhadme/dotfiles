@@ -40,6 +40,9 @@ bindsym $mod+t exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Emoji picker
+bindsym $mod+u exec rofi -modi emoji -show emoji
+
 # Change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
