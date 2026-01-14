@@ -2,7 +2,7 @@
 @theme "/usr/share/rofi/themes/Monokai.rasi"
 
 configuration {
-  modes: "drun";
+  modes: "window,drun";
   font: "Fira Mono 12";
   show-icons: true;
   display-drun: "Applications";

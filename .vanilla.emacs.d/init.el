@@ -251,4 +251,3 @@
 (setq mac-command-modifier 'control)
 
 (set-frame-font "Fira Mono-12" nil t)
-

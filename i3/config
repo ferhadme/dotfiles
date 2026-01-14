@@ -41,7 +41,7 @@ bindsym $mod+t exec --no-startup-id dmenu_run
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi as application launcher
-bindsym $mod+Ctrl+space exec --no-startup-id rofi -show drun
+bindsym $mod+Ctrl+space exec --no-startup-id rofi -show combi -modes combi -combi-modes "window#drun"
 
 # Emoji picker
 bindsym $mod+u exec rofi -modi emoji -show emoji
