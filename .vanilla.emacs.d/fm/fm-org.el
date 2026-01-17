@@ -1,23 +1,25 @@
-;; Org mode configurations
-(setq org-todo-keyword-faces
-      '(
-	("PROGRESS" . (:foreground "purple" :weight normal))
-	("NOW" . (:foreground "#9E8EC0" :weight bold))
-	("STOPPED" . (:foreground "#74b3ce" :weight normal))
-	))
+;;; fm-org.el --- Org configuration  -*- lexical-binding: t; -*-
 
+;; Org mode configurations
 (setq org-todo-keywords
-      '((sequence "TODO" "PROGRESS" "STOPPED"
-		  "NOW" "DONE")))
+      '((sequence "TODO(t)" "NEXT(n)" "PROG(p)" "WAIT(w)" "HOLD(h)" "|" "DONE(d)" "CANCEL(c)")))
+
+(setq org-todo-keyword-faces
+      '(("NEXT" . (:foreground "#ef6c00" :weight bold))
+        ("PROG" . (:foreground "#009688" :weight bold))
+        ("WAIT" . (:foreground "#7b1fa2" :weight bold))
+        ("HOLD" . (:foreground "#78909c" :weight bold))
+        ("CANCEL" . (:foreground "#d32f2f" :weight bold))))
 
 (setq org-priority-faces '((?A . (:foreground "red" :weight 'bold))
                            (?B . (:foreground "yellow"))
                            (?C . (:foreground "green"))))
 
 (setq org-hide-emphasis-markers t)
-;; (add-hook 'org-mode-hook 'variable-pitch-mode)
+
 (add-hook 'org-mode-hook 'visual-line-mode)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c a") (kbd "C-u C-u C-u TAB"))))
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c <up>") 'org-priority-up)))
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c <down>") 'org-priority-down)))
@@ -51,3 +53,5 @@
 (setq org-alert-interval 300
       org-alert-notify-cutoff 10
       org-alert-notify-after-event-cutoff 10)
+
+(provide 'fm-org)

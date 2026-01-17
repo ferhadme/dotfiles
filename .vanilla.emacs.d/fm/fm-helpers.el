@@ -1,3 +1,5 @@
+;;; fm-helpers.el --- Helper functions  -*- lexical-binding: t; -*-
+
 (defun fm/copy-line ()
   "Copies a line under the cursor"
   (interactive)
@@ -17,3 +19,6 @@
   (interactive)
   (let ((size 15))
     (enlarge-window size)))
+
+(provide 'fm-helpers)
+
