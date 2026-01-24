@@ -1,5 +1,7 @@
 ;;; fm-keymap.el --- Custom keybindings  -*- lexical-binding: t; -*-
 
+(require 'fm-helpers)
+
 ;; Compilation
 (global-set-key (kbd "C-c C-e") 'eshell)
 (global-set-key (kbd "C-c c c") 'compile)
@@ -30,7 +32,6 @@
 ;; Text editing
 (global-set-key (kbd "C-<return>") (kbd "C-e C-m"))
 
-(require 'fm-helpers)
 (global-set-key (kbd "C-,") 'fm/copy-line)
 (global-set-key (kbd "C-.") 'fm/duplicate-line)
 (global-set-key (kbd "C-x w") 'fm/enlarge-window)
@@ -41,7 +42,7 @@
 
 
 ;; Smex: A M-x enhancement built on top of Ido
-(require 'smex)
+(fm/require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c M-x") 'execute-extended-command)
@@ -54,7 +55,7 @@
 
 
 ;; Editing in many places at once
-(require 'multiple-cursors)
+(fm/require 'multiple-cursors)
 (global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c m a") 'mc/edit-beginnings-of-lines)
@@ -64,7 +65,7 @@
 
 
 ;; A Git interface for Emacs
-(require 'magit)
+(fm/require 'magit)
 (global-set-key (kbd "C-c g s") 'magit-status)
 (global-set-key (kbd "C-c g l") 'magit-log)
 
@@ -79,7 +80,7 @@
 
 
 ;; Move current line or region up or down
-(require 'move-text)
+(fm/require 'move-text)
 (global-set-key (kbd "M-<up>") 'move-text-up)
 (global-set-key (kbd "M-<down>") 'move-text-down)
 

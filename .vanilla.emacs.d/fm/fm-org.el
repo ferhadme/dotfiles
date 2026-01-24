@@ -1,6 +1,6 @@
 ;;; fm-org.el --- Org configuration  -*- lexical-binding: t; -*-
 
-;; Org mode configurations
+;; Todo keywords faces
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "PROG(p)" "WAIT(w)" "HOLD(h)" "|" "DONE(d)" "CANCEL(c)")))
 
@@ -11,20 +11,25 @@
         ("HOLD" . (:foreground "#78909c" :weight bold))
         ("CANCEL" . (:foreground "#d32f2f" :weight bold))))
 
+;; Priority faces
 (setq org-priority-faces '((?A . (:foreground "red" :weight 'bold))
                            (?B . (:foreground "yellow"))
                            (?C . (:foreground "green"))))
 
+;; Hide formatting characters
 (setq org-hide-emphasis-markers t)
 
+;; Line soft wrapping and replacing * (bullets) with UTF-8 circles
 (add-hook 'org-mode-hook 'visual-line-mode)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+;; Key bindings
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c a") (kbd "C-u C-u C-u TAB"))))
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c <up>") 'org-priority-up)))
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c <down>") 'org-priority-down)))
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-<return>") (kbd "C-e C-m"))))
 
+;; Header level faces
 (custom-theme-set-faces 'user
 	`(org-level-1
 	  ((t (:foreground "#97A7C8" :weight normal))))
@@ -41,14 +46,17 @@
 	`(org-block
 	  ((t (:background "#262922")))))
 
+;; Inline image link in buffer
 (setq org-startup-with-inline-images t)
 
+;; Ensures code inside #+BEGIN_SRC blocks is syntax-highlighted
 (setq org-src-fontify-natively t)
 
 (set-face-attribute 'italic nil
                 :slant 'oblique
                 :underline nil)
 
+;; Notifications
 (setq alert-default-style 'libnotify)
 (setq org-alert-interval 300
       org-alert-notify-cutoff 10

@@ -1,5 +1,7 @@
 ;;; fm-editor.el --- General editor configurations  -*- lexical-binding: t; -*-
 
+(require 'fm-helpers)
+
 ;; Optimizing Emacs startup. The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 990 990))
 
@@ -48,7 +50,7 @@
 
 
 ;; Tildes on empty lines like in Vim
-(require 'vi-tilde-fringe)
+(fm/require 'vi-tilde-fringe)
 (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
 
 
@@ -105,7 +107,7 @@
 
 
 ;; Highlight todo keyword faces
-(require 'hl-todo)
+(fm/require 'hl-todo)
 (global-hl-todo-mode 1)
 
 (setq hl-todo-keyword-faces
@@ -132,7 +134,7 @@
 ;; Used snippets are from https://github.com/doomemacs/snippets
 (add-to-list 'load-path
              "~/dotfiles/.vanilla.emacs.d/snippets/")
-(require 'yasnippet)
+(fm/require 'yasnippet)
 (yas-global-mode 1)
 
 
@@ -142,5 +144,8 @@
 
 ;; Scheme mode for Racket files
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
+
+;; Highlight edited line
+(global-hl-line-mode)
 
 (provide 'fm-editor)

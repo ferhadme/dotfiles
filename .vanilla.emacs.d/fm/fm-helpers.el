@@ -1,5 +1,8 @@
 ;;; fm-helpers.el --- Helper functions  -*- lexical-binding: t; -*-
 
+(defvar fm/package-contents-refreshed nil
+  "Flag to ensure package-refresh-contents runs only once per session.")
+
 (defun fm/copy-line ()
   "Copies a line under the cursor"
   (interactive)
@@ -19,6 +22,15 @@
   (interactive)
   (let ((size 15))
     (enlarge-window size)))
+
+(defun fm/require (package)
+  "Require wrapper to install required package if it is not installed"
+  (unless (package-installed-p package)
+    (when (not fm/package-contents-refreshed)
+      (package-refresh-contents)
+      (setq fm/package-contents-refreshed t))
+    (package-install package))
+  (require package))
 
 (provide 'fm-helpers)
 
