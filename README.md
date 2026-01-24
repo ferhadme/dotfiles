@@ -43,6 +43,8 @@ On a typical daily workload (text editors, browser, terminal, media players) on 
 
 **`.bashrc`** - Bash shell configuration (aliases, PS1, exports, autocompletion)
 
+**`.zshrc`** - Zsh shell configuration (aliases, PS1, exports, autocompletion)
+
 **`.tmux.conf`** - Tmux terminal multiplexer keybindings and appearance
 
 **`.gitconfig`** - Git configuration with bunch of useful aliases
