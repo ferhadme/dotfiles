@@ -35,9 +35,11 @@
 
 
 ;; Font and Theme
-(set-frame-font "Fira Mono-12" nil t)
+(when (eq system-type 'gnu/linux)
+  (set-frame-font "Fira Mono-12" nil t))
 
 ;; Theme from https://github.com/rexim/gruber-darker-theme
+(fm/require 'gruber-darker-theme)
 (load-theme 'gruber-darker t)
 ;; (load-theme 'doom-tomorrow-night t)
 
