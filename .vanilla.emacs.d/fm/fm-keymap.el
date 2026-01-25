@@ -2,8 +2,17 @@
 
 (require 'fm-helpers)
 
+;; C-c keymap prefix is used for custom keybindings:
+;; C-c c: Compilation
+;; C-c o: Overwrite mode
+;; C-c w: Opening workspaces
+;; C-c m: Multiple cursors
+;; C-c g: Magit git interface
+;; C-c e: Eglot LSP client
+;; C-c u: Undo tree
+
 ;; Compilation
-(global-set-key (kbd "C-c C-e") 'eshell)
+(global-set-key (kbd "C-c c e") 'eshell)
 (global-set-key (kbd "C-c c c") 'compile)
 (global-set-key (kbd "C-c c r") 'recompile)
 
@@ -91,5 +100,10 @@
 
 ;; Map CMD to Control (for MacOS)
 (setq mac-command-modifier 'control)
+
+;; Undo Tree visualizer
+(fm/require 'undo-tree)
+(global-undo-tree-mode)
+(global-set-key (kbd "C-c u v") 'undo-tree-visualize)
 
 (provide 'fm-keymap)
