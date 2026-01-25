@@ -1,16 +1,5 @@
 **/*~
 
-.vanilla.emacs.d/auto-save-list
-.vanilla.emacs.d/.cache
-.vanilla.emacs.d/elpa
-.vanilla.emacs.d/eshell
-.vanilla.emacs.d/ido.last
-.vanilla.emacs.d/.mc-lists.el
-.vanilla.emacs.d/.org-id-locations
-.vanilla.emacs.d/smex-items
-.vanilla.emacs.d/transient
-.vanilla.emacs.d/url
-.vanilla.emacs.d/games
-.vanilla.emacs.d/bookmarks
-.vanilla.emacs.d/eln-cache
-
+.vanilla.emacs.d/*
+!.vanilla.emacs.d/init.el
+!.vanilla.emacs.d/fm

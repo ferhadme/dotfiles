@@ -130,6 +130,10 @@
   (setq auto-save-file-name-transforms
 	`((".*" ,backupdir t))))
 
+;; Override undo tree persistent state file location
+(setq undo-tree-auto-save-history t)
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+
 
 ;; Used snippets are from https://github.com/doomemacs/snippets
 (add-to-list 'load-path
