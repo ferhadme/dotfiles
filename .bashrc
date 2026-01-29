@@ -48,6 +48,7 @@ intro_em() {
 export LSCOLORS=cxgxfxexbxegedabagacad
 export CLICOLOR=1
 export EDITOR='vim'
+export MYVIMRC=~/.vimrc
 export TERMINAL=alacritty
 ### Exports_End
 
