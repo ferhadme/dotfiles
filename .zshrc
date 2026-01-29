@@ -40,4 +40,5 @@ if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/pa
 if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="$HOME/.local/bin:$PATH"
+export MYVIMRC=~/.vimrc
 

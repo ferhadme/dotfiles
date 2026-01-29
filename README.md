@@ -11,15 +11,15 @@ On a typical daily workload (text editors, browser, terminal, media players) on 
 
 #### Editors
 
-**`.doom.d`** - Doom Emacs configuration
-
 **`.vanilla.emacs.d`** - Plain Emacs configuration
 
-**`.edwin.d`** - Edwin text editor configuration
-
-**`.vimrc`** - Very minimal Vim setup
+**`.vimrc`** - Vim configuration
 
 **`.ideavimrc`** - Intellij IDEA Vim plugin configuration (loads .vimrc)
+
+**`.doom.d`** - Doom Emacs configuration
+
+**`.edwin.d`** - Edwin text editor configuration
 
 #### Window Manager & UI
 
