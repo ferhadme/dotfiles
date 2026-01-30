@@ -30,6 +30,12 @@
                                tab-width 4
                                indent-tabs-mode nil)))
 
+;; Emacs lisp
+(add-hook 'emacs-lisp-mode-hook (lambda ()
+  (setq tab-width 4)
+  (setq indent-tabs-mode nil) ;; Use spaces for indentation
+  (setq lisp-indent-offset 4)))
+
 ;; For other modes
 (defun tab-width-config ()
   (setq c-basic-offset 4
@@ -42,3 +48,4 @@
 (add-hook 'rust-mode-hook 'tab-width-config)
 (add-hook 'perl-mode-hook 'tab-width-config)
 (add-hook 'js-mode-hook 'tab-width-config)
+
