@@ -3,6 +3,8 @@
 ;; All hex codes are taken from gruber darker theme color palette
 ;; https://github.com/rexim/gruber-darker-theme/blob/master/gruber-darker-theme.el#LL59
 
+;; Face definitions
+;;
 ;; Buffer name faces
 (defface fm/buffer-name-face
   '((t :background "#282828"
@@ -38,6 +40,20 @@
   '((t :foreground "#444444"))
   "Face for displaying version control info in inactive modeline")
 
+;; LSP server face
+(defface fm/lsp-face
+  '((t :foreground "#88c0d0"
+      :weight bold))
+  "Face for displaying LSP server in active modeline")
+
+(defface fm/lsp-inactive-face
+  '((t :foreground "#444444"
+      :weight normal))
+  "Face for displaying LSP server in inactive modeline")
+
+
+;; Formatters
+;;
 ;; Buffer name
 (defun fm/buffer-name ()
   (propertize
@@ -45,14 +61,6 @@
     'face (if (mode-line-window-selected-p)
             'fm/buffer-name-face
             'fm/buffer-name-inactive-face)))
-
-;; Major mode
-(defun fm/mode-line-major-mode ()
-  (propertize
-    (format " %s " major-mode)
-    'face (if (mode-line-window-selected-p)
-            'fm/major-mode-face
-            'fm/major-mode-inactive-face)))
 
 ;; File encoding
 (defun fm/format-file-encoding ()
@@ -64,10 +72,26 @@
 	`((space
 		:align-to
 		(- right
-		  ,(+ 1 ;; Sum of manually used spaces after usage of fm/alignment in mode-line-format
-			 (length (fm/mode-line-major-mode))
-			 (length (fm/vc))))))))
+		  ,(+ 1
 
+             ;; Sum of manually used spaces after usage of fm/alignment in mode-line-format
+             (+ (if (= (length (fm/vc)) 0) 0 1)
+               (if (= (length (fm/lsp-server-name)) 0) 0 1))
+
+			 (length (fm/mode-line-major-mode))
+			 (length (fm/vc))
+			 (length (fm/lsp-server-name))))))))
+
+;; LSP Server
+
+
+;; Major mode
+(defun fm/mode-line-major-mode ()
+  (propertize
+    (format " %s " major-mode)
+    'face (if (mode-line-window-selected-p)
+            'fm/major-mode-face
+            'fm/major-mode-inactive-face)))
 
 ;; Version control
 (defun fm/vc ()
@@ -95,6 +119,10 @@
 	 (:eval (fm/mode-line-major-mode))
 
 	 " "
+
+     (:eval (fm/lsp-server-name))
+
+     " "
 
 	 (:eval (fm/vc))
 
