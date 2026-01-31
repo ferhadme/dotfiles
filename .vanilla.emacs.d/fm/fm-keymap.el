@@ -23,9 +23,9 @@
 
 ;; Some modes like man-mode overwrites global scrolling keybindings
 (add-hook 'Man-mode-hook
-          (lambda ()
-	    (local-set-key (kbd "M-n") #'scroll-up-line)
-	    (local-set-key (kbd "M-p") #'scroll-down-line)))
+  (lambda ()
+	(local-set-key (kbd "M-n") #'scroll-up-line)
+	(local-set-key (kbd "M-p") #'scroll-down-line)))
 
 
 ;; Window
@@ -95,8 +95,8 @@
 
 ;; Emacs Eglot LSP client
 (add-hook 'prog-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-c e f") 'xref-find-references)))
+  (lambda ()
+    (local-set-key (kbd "C-c e f") 'xref-find-references)))
 
 ;; Map CMD to Control (for MacOS)
 (setq mac-command-modifier 'control)

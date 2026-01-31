@@ -2,17 +2,20 @@
 
 (require 'fm-helpers)
 
+;; Use UTF-8 as the default coding system for all buffers
+(set-default-coding-systems 'utf-8)
+
 ;; Optimizing Emacs startup. The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 990 990))
 
 ;; Profile emacs startup
 (add-hook 'emacs-startup-hook
-          (lambda ()
-            (message "*** Emacs loaded in %s with %d garbage collections."
-                     (format "%.2f seconds"
-                             (float-time
-                              (time-subtract after-init-time before-init-time)))
-                     gcs-done)))
+  (lambda ()
+    (message "*** Emacs loaded in %s with %d garbage collections."
+      (format "%.2f seconds"
+        (float-time
+          (time-subtract after-init-time before-init-time)))
+      gcs-done)))
 
 
 ;; Usual Emacs tweaks
@@ -64,19 +67,25 @@
 
 
 ;; Enable relative line numbers for some modes
-(dolist (mode '(text-mode-hook
-		prog-mode-hook
-		org-mode-hook
-		conf-mode-hook))
-  (add-hook mode (lambda ()
-		   (display-line-numbers-mode 1)
-		   (setq display-line-numbers-type 'relative))))
+(dolist
+  (mode
+    '(text-mode-hook
+	   prog-mode-hook
+	   org-mode-hook
+	   conf-mode-hook))
+  (add-hook mode
+    (lambda ()
+	  (display-line-numbers-mode 1)
+	  (setq display-line-numbers-type 'relative))))
 
 ;; Override some modes which derive from the above
-(dolist (mode '(term-mode-hook
-		shell-mode-hook
-		eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+(dolist
+  (mode
+    '(term-mode-hook
+	   shell-mode-hook
+	   eshell-mode-hook))
+  (add-hook mode
+    (lambda () (display-line-numbers-mode 0))))
 
 
 ;; Improve scrolling
@@ -88,13 +97,13 @@
 ;; Compilation and shell
 (defadvice compile (around split-horizontally activate)
   (let ((split-width-threshold nil)
-        (split-height-threshold 0))
+         (split-height-threshold 0))
     ad-do-it))
 
 (setq compilation-ask-about-save nil)
 
 (setq eshell-prompt-function
-      (lambda nil
+  (lambda nil
 	"λ "))
 (setq eshell-prompt-regexp "λ ")
 
@@ -113,14 +122,14 @@
 (global-hl-todo-mode 1)
 
 (setq hl-todo-keyword-faces
-      '(("TODO"       . "#20E3B2")
-        ("FIXME"      . "#FF6C6B")
-        ("BUG"        . "#FF4500")
-        ("NOTE"       . "#51AFEF")
-        ("OPTIMIZE"   . "#C678DD")
-        ("DEPRECATED" . "#5B6268")
-        ("HACK"       . "#ECBE7B")
-        ("REVIEW"     . "#A9A1E1")))
+  '(("TODO"       . "#20E3B2")
+     ("FIXME"      . "#FF6C6B")
+     ("BUG"        . "#FF4500")
+     ("NOTE"       . "#51AFEF")
+     ("OPTIMIZE"   . "#C678DD")
+     ("DEPRECATED" . "#5B6268")
+     ("HACK"       . "#ECBE7B")
+     ("REVIEW"     . "#A9A1E1")))
 
 
 ;; Taken from https://github.com/stapelberg/configfiles
@@ -133,23 +142,19 @@
 	`((".*" ,backupdir t))))
 
 ;; Override undo tree persistent state file location
-(setq undo-tree-auto-save-history t)
+(setq undo-tree-auto-save-history nil)
 (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 
 
 ;; Used snippets are from https://github.com/doomemacs/snippets
 (add-to-list 'load-path
-             "~/dotfiles/.vanilla.emacs.d/snippets/")
+  "~/dotfiles/.vanilla.emacs.d/snippets/")
 (fm/require 'yasnippet)
 (yas-global-mode 1)
 
 
 ;; Don't ask symbolic link to Git controlled source file
 (setq vc-follow-symlinks t)
-
-
-;; Scheme mode for Racket files
-(add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
 
 ;; Highlight edited line
 (global-hl-line-mode)
