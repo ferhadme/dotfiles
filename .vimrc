@@ -45,8 +45,8 @@ nnoremap <leader>bD :bufdo bd<cr>
 " Windows
 nnoremap <leader>c :close<cr>
 nnoremap <leader>o <C-w>w
-nnoremap <leader>wv :vsplit<cr>
-nnoremap <leader>wh :split<cr>
+nnoremap <leader>wv :vsplit<cr><C-w>x
+nnoremap <leader>wh :split<cr><C-w>x
 nnoremap <leader>w- :resize -5<cr>
 nnoremap <leader>w+ :resize +5<cr>
 nnoremap <leader>w< :vertical resize -5<cr>
@@ -82,8 +82,8 @@ nnoremap <leader>lo :lopen<cr>
 nnoremap <leader>lc :lclose<cr>
 
 " Terminal
-nnoremap <leader>tt :terminal<cr>
-nnoremap <leader>tv :vertical terminal<cr>
+nnoremap <leader>tt :terminal<cr><C-w>x<C-w>w
+nnoremap <leader>tv :vertical terminal<cr><C-w>x<C-w>w
 
 " Git
 nnoremap <leader>gs :!git status<CR>
