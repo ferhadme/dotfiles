@@ -10,6 +10,7 @@
 ;; adding fm directory to load-path for require
 (add-to-list 'load-path (expand-file-name "fm" user-emacs-directory))
 
+
 ;; loads fm/**
 (require 'fm-editor)
 (require 'fm-keymap)

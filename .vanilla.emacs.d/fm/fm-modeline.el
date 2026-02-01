@@ -82,8 +82,9 @@
 			 (length (fm/vc))
 			 (length (fm/lsp-server-name))))))))
 
-;; LSP Server
-
+;; TODO: LSP Server name
+(defun fm/lsp-server-name ()
+  "LSP")
 
 ;; Major mode
 (defun fm/mode-line-major-mode ()
@@ -96,7 +97,7 @@
 ;; Version control
 (defun fm/vc ()
   (when vc-mode
-    (propertize (format " ⎇ %s " (substring vc-mode 5))
+    (propertize (format "⎇ %s" (substring vc-mode 5))
 	  'face (if (mode-line-window-selected-p)
               'fm/vc-face
               'fm/vc-inactive-face))))
@@ -106,26 +107,20 @@
 (setq-default mode-line-format
   '("%e"
 	 mode-line-front-space
-
-	 mode-line-modified
+	 mode-line-mule-info
      (:eval (fm/buffer-name))
 	 mode-line-modified
      "  "
-
 	 "L%l:C%c "
 
 	 (:eval (fm/alignment))
 
 	 (:eval (fm/mode-line-major-mode))
-
 	 " "
-
      (:eval (fm/lsp-server-name))
-
      " "
-
 	 (:eval (fm/vc))
-
      mode-line-end-spaces))
 
 (provide 'fm-modeline)
+
