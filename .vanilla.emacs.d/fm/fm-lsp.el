@@ -15,9 +15,9 @@
 
 (add-hook 'eglot-managed-mode-hook #'fm/eglot-silent-ui)
 
-;; Languages to use with LSP server (backends like Clang, Elisp are supported by company out of box)
-(defvar fm/lsp-languages
-  '(rust-mode
+;; Language hooks to use with LSP server (backends like Clang, Elisp are supported by company out of box)
+(defvar fm/lsp-hooks
+  '(rust-mode-hook
      ;; Additions
      )
   "List of major modes to enable Eglot for.")
