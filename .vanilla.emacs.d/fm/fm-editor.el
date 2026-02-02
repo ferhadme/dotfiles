@@ -108,9 +108,6 @@
 (setq eshell-prompt-regexp "λ ")
 
 
-;; Company code completion
-(add-hook 'after-init-hook 'global-company-mode)
-
 ;; Ido completion
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
