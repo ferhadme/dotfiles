@@ -94,14 +94,19 @@ nnoremap <leader>tv :vertical terminal<cr><C-w>x<C-w>w
 nnoremap <leader>gs :!git status<CR>
 nnoremap <leader>gd :!git diff<CR>
 
+" Marks
+nnoremap <leader>md :delmarks!
+
 " fzf.vim
-map <leader>ff :Files<cr>
-map <leader>fb :Buffers<cr>
-map <leader>fw :Windows<cr>
-map <leader>fm :Maps<cr>
-map <leader>fr :Rg<cr>
-map <leader>fl :BLines<cr>
-map <leader>fc :Commands<cr>
+nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fb :Buffers<cr>
+nnoremap <leader>fw :Windows<cr>
+nnoremap <leader>fh :Maps<cr>
+nnoremap <leader>fm :BMarks<cr>
+nnoremap <leader>fM :Marks<cr>
+nnoremap <leader>fr :Rg<cr>
+nnoremap <leader>fl :BLines<cr>
+nnoremap <leader>fc :Commands<cr>
 
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
