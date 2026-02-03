@@ -98,4 +98,8 @@ nnoremap <leader>gd :!git diff<CR>
 map <leader>ff :Files<cr>
 map <leader>fb :Buffers<cr>
 map <leader>fw :Windows<cr>
+map <leader>fm :Maps<cr>
+map <leader>fr :Rg<cr>
+map <leader>fl :BLines<cr>
+map <leader>fc :Commands<cr>
 
