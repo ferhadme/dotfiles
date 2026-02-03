@@ -12,6 +12,7 @@ alias la='ls -A'
 alias l='ls -CF --color=auto'
 
 alias grep='grep --color=auto'
+alias rg='rg --hidden'
 alias ls='ls -G'
 alias diff='colordiff'
 

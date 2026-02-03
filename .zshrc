@@ -22,6 +22,7 @@ alias la='ls -A'
 alias l='ls -CF --color=auto'
 alias ls='ls -l'
 alias src='cd ~/Programming/'
+alias rg='rg --hidden'
 
 setopt noautomenu
 setopt nomenucomplete
