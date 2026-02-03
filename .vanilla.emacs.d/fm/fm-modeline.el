@@ -40,16 +40,11 @@
   '((t :foreground "#444444"))
   "Face for displaying version control info in inactive modeline")
 
-;; LSP server face
-(defface fm/lsp-face
-  '((t :foreground "#88c0d0"
-      :weight bold))
-  "Face for displaying LSP server in active modeline")
-
-(defface fm/lsp-inactive-face
-  '((t :foreground "#444444"
-      :weight normal))
-  "Face for displaying LSP server in inactive modeline")
+;; Mode-line modes (minor modes) faces
+(defface fm/modes-face
+  '((t :foreground "#95a99f"
+       :weight bold))
+  "Face for displaying minor modes in active modeline")
 
 
 ;; Formatters
@@ -72,21 +67,14 @@
 	`((space
 		:align-to
 		(- right
-		  ,(+ 1
+		  ,(+ 2 ;; sum of manually used spaces in right side
 
 			 (length (fm/mode-line-major-mode))
-			 (length (fm/vc))
-			 (length (fm/lsp-server-name))))))))
+			 (length (format-mode-line mode-line-modes))
+			 (length (fm/vc))))))))
 
 (defun fm/ensure-space (formatted-str original-str)
   (concat formatted-str (if (= (length original-str) 0) "" " ")))
-
-;; LSP Server name
-(defun fm/lsp-server-name ()
-  "Returns a prettified string of the current LSP server if Eglot is active."
-  (if-let ((server (and (featurep 'eglot) (eglot-current-server))))
-    (format "LSP:%s" (eglot-project-nickname server))
-    "No LSP"))
 
 ;; Major mode
 (defun fm/mode-line-major-mode ()
@@ -115,17 +103,19 @@
 	 mode-line-modified
      "  "
 	 "L%l:C%c "
+     "  "
 
 	 (:eval (fm/alignment))
 
-	 (:eval (fm/mode-line-major-mode))
+     (:propertize mode-line-modes face fm/modes-face)
 
+     " "
+
+	 (:eval (fm/mode-line-major-mode))
      " "
 
      (:eval (fm/vc))
 
-	 (:eval (fm/lsp-server-name))
      mode-line-end-spaces))
 
 (provide 'fm-modeline)
-

@@ -11,10 +11,13 @@
 ;; C-c e: Eglot LSP client
 ;; C-c u: Undo tree
 
+
 ;; Compilation
 (global-set-key (kbd "C-c c e") 'eshell)
 (global-set-key (kbd "C-c c c") 'compile)
 (global-set-key (kbd "C-c c r") 'recompile)
+
+(global-set-key (kbd "C-c r") 'revert-buffer)
 
 
 ;; Scrolling
@@ -30,6 +33,7 @@
 
 ;; Window
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "C-x w") 'fm/enlarge-window)
 
 ;; Rebinding arrow keys for fast window switch
 (global-set-key (kbd "<up>") 'windmove-up)
@@ -43,7 +47,6 @@
 
 (global-set-key (kbd "C-,") 'fm/copy-line)
 (global-set-key (kbd "C-.") 'fm/duplicate-line)
-(global-set-key (kbd "C-x w") 'fm/enlarge-window)
 
 (global-set-key (kbd "C-c o") 'overwrite-mode)
 
@@ -80,6 +83,7 @@
 
 
 ;; Jump to things in Emacs tree-style
+(fm/require 'avy)
 (global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "C-\"") 'avy-goto-char-2)
 (global-set-key (kbd "M-g l") 'avy-goto-line)
