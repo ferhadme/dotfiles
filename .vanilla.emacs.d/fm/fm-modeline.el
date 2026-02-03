@@ -74,17 +74,19 @@
 		(- right
 		  ,(+ 1
 
-             ;; Sum of manually used spaces after usage of fm/alignment in mode-line-format
-             (+ (if (= (length (fm/vc)) 0) 0 1)
-               (if (= (length (fm/lsp-server-name)) 0) 0 1))
-
 			 (length (fm/mode-line-major-mode))
 			 (length (fm/vc))
 			 (length (fm/lsp-server-name))))))))
 
-;; TODO: LSP Server name
+(defun fm/ensure-space (formatted-str original-str)
+  (concat formatted-str (if (= (length original-str) 0) "" " ")))
+
+;; LSP Server name
 (defun fm/lsp-server-name ()
-  "LSP")
+  "Returns a prettified string of the current LSP server if Eglot is active."
+  (if-let ((server (and (featurep 'eglot) (eglot-current-server))))
+    (format "LSP:%s" (eglot-project-nickname server))
+    "No LSP"))
 
 ;; Major mode
 (defun fm/mode-line-major-mode ()
@@ -97,10 +99,11 @@
 ;; Version control
 (defun fm/vc ()
   (when vc-mode
-    (propertize (format "⎇ %s" (substring vc-mode 5))
-	  'face (if (mode-line-window-selected-p)
-              'fm/vc-face
-              'fm/vc-inactive-face))))
+    (let ((branch (substring vc-mode 5)))
+      (propertize (fm/ensure-space (format "⎇ %s" branch) branch)
+	    'face (if (mode-line-window-selected-p)
+                'fm/vc-face
+                'fm/vc-inactive-face)))))
 
 
 ;; Mode line format
@@ -116,10 +119,12 @@
 	 (:eval (fm/alignment))
 
 	 (:eval (fm/mode-line-major-mode))
-	 " "
-     (:eval (fm/lsp-server-name))
+
      " "
-	 (:eval (fm/vc))
+
+     (:eval (fm/vc))
+
+	 (:eval (fm/lsp-server-name))
      mode-line-end-spaces))
 
 (provide 'fm-modeline)
