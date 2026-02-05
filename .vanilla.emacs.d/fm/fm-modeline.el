@@ -107,7 +107,7 @@
 
 	 (:eval (fm/alignment))
 
-     (:propertize mode-line-modes face fm/modes-face)
+     mode-line-modes
 
      " "
 
