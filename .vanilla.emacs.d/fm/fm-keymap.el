@@ -24,11 +24,13 @@
 (global-set-key (kbd "M-n") 'scroll-up-line)
 (global-set-key (kbd "M-p") 'scroll-down-line)
 
-;; Some modes like man-mode overwrites global scrolling keybindings
-(add-hook 'Man-mode-hook
-  (lambda ()
-	(local-set-key (kbd "M-n") #'scroll-up-line)
-	(local-set-key (kbd "M-p") #'scroll-down-line)))
+;; Some modes like man, markdown mode overwrites global scrolling keybindings
+(defun fm/custom-scrolling ()
+  (local-set-key (kbd "M-n") #'scroll-up-line)
+  (local-set-key (kbd "M-p") #'scroll-down-line))
+
+(dolist (hook '(Man-mode-hook markdown-mode-hook))
+  (add-hook hook #'fm/custom-scrolling))
 
 
 ;; Window
