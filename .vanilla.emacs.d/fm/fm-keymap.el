@@ -62,6 +62,10 @@
 (global-set-key (kbd "C-c M-x") 'execute-extended-command)
 
 
+;; Consult: Search and navigation
+;; TODO
+
+
 ;; Workspaces
 (global-set-key (kbd "C-c w p") (lambda () (interactive) (find-file "~/Programming/")))
 (global-set-key (kbd "C-c w o") (lambda () (interactive) (find-file "~/Documents/Org/")))

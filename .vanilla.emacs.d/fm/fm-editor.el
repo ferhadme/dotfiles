@@ -70,20 +70,20 @@
 (dolist
   (mode
     '(text-mode-hook
-	   prog-mode-hook
-	   org-mode-hook
-	   conf-mode-hook))
+       prog-mode-hook
+       org-mode-hook
+       conf-mode-hook))
   (add-hook mode
     (lambda ()
-	  (display-line-numbers-mode 1)
-	  (setq display-line-numbers-type 'relative))))
+      (display-line-numbers-mode 1)
+      (setq display-line-numbers-type 'relative))))
 
 ;; Override some modes which derive from the above
 (dolist
   (mode
     '(term-mode-hook
-	   shell-mode-hook
-	   eshell-mode-hook))
+       shell-mode-hook
+       eshell-mode-hook))
   (add-hook mode
     (lambda () (display-line-numbers-mode 0))))
 
@@ -104,14 +104,27 @@
 
 (setq eshell-prompt-function
   (lambda nil
-	"λ "))
+    "λ "))
 (setq eshell-prompt-regexp "λ ")
 
 
 ;; Ido completion
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+;; (ido-mode 1)
+
+;; Enable vertico mode for consult search
+(fm/require 'vertico)
+(vertico-mode 1)
+(setq vertico-cycle t)
+
+;; Orderless completion in minibuffers
+(fm/require 'orderless)
+(setq completion-styles '(orderless flex))
+
+;; Show xrefs with preview in the minibuffer.
+(setq xref-show-xrefs-function #'consult-xref)
+(setq xref-show-definitions-function #'consult-xref)
 
 
 ;; Highlight todo keyword faces
@@ -136,7 +149,7 @@
   (mkdir backupdir t)
   (setq backup-directory-alist `(("." . ,backupdir)))
   (setq auto-save-file-name-transforms
-	`((".*" ,backupdir t))))
+    `((".*" ,backupdir t))))
 
 ;; Override undo tree persistent state file location
 (setq undo-tree-auto-save-history nil)

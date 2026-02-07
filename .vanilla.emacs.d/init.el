@@ -11,11 +11,10 @@
 (add-to-list 'load-path (expand-file-name "fm" user-emacs-directory))
 
 
-;; loads fm/**
 (require 'fm-editor)
 (require 'fm-keymap)
 (require 'fm-org)
 (require 'fm-lang)
 (require 'fm-modeline)
+(require 'fm-dashboard)
 (require 'fm-lsp)
-

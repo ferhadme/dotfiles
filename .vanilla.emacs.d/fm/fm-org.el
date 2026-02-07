@@ -2,12 +2,10 @@
 
 ;; Todo keywords faces
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "PROG(p)" "WAIT(w)" "HOLD(h)" "|" "DONE(d)" "CANCEL(c)")))
+      '((sequence "TODO(t)" "PROG(p)" "HOLD(h)" "|" "DONE(d)" "CANCEL(c)")))
 
 (setq org-todo-keyword-faces
-      '(("NEXT" . (:foreground "#ef6c00" :weight bold))
-        ("PROG" . (:foreground "#009688" :weight bold))
-        ("WAIT" . (:foreground "#7b1fa2" :weight bold))
+      '(("PROG" . (:foreground "#009688" :weight bold))
         ("HOLD" . (:foreground "#78909c" :weight bold))
         ("CANCEL" . (:foreground "#d32f2f" :weight bold))))
 
@@ -31,20 +29,20 @@
 
 ;; Header level faces
 (custom-theme-set-faces 'user
-	`(org-level-1
-	  ((t (:foreground "#97A7C8" :weight normal))))
-	`(org-level-2
-	  ((t (:foreground "#F4F4FF" :weight normal))))
-	`(org-level-3
-	  ((t (:foreground "#FFDD35" :weight normal))))
-	`(org-level-4
-	  ((t (:foreground "#CC8C3C" :weight normal))))
-	`(org-level-5
-	  ((t (:foreground "#CA26D9" :weight normal))))
-	`(org-priority
-	  ((t (:foreground "#b9fbc0" :weight normal))))
-	`(org-block
-	  ((t (:background "#262922")))))
+  `(org-level-1
+     ((t (:foreground "#97A7C8" :weight normal))))
+  `(org-level-2
+     ((t (:foreground "#F4F4FF" :weight normal))))
+  `(org-level-3
+     ((t (:foreground "#FFDD35" :weight normal))))
+  `(org-level-4
+     ((t (:foreground "#CC8C3C" :weight normal))))
+  `(org-level-5
+     ((t (:foreground "#CA26D9" :weight normal))))
+  `(org-priority
+     ((t (:foreground "#b9fbc0" :weight normal))))
+  `(org-block
+     ((t (:background "#262922")))))
 
 ;; Inline image link in buffer
 (setq org-startup-with-inline-images t)
@@ -60,6 +58,8 @@
 (setq alert-default-style 'libnotify)
 (setq org-alert-interval 300
       org-alert-notify-cutoff 10
-      org-alert-notify-after-event-cutoff 10)
+  org-alert-notify-after-event-cutoff 10)
+
+(setq org-agenda-files '("~/Documents/org/"))
 
 (provide 'fm-org)
