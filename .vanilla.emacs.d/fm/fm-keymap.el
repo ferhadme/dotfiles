@@ -10,6 +10,7 @@
 ;; C-c g: Magit git interface
 ;; C-c e: Eglot LSP client
 ;; C-c u: Undo tree
+;; C-c p: Consult functions
 
 
 ;; Compilation
@@ -21,8 +22,8 @@
 
 
 ;; Scrolling
-(global-set-key (kbd "M-n") 'scroll-up-line)
-(global-set-key (kbd "M-p") 'scroll-down-line)
+(global-set-key (kbd "M-n") #'scroll-up-line)
+(global-set-key (kbd "M-p") #'scroll-down-line)
 
 ;; Some modes like man, markdown mode overwrites global scrolling keybindings
 (defun fm/custom-scrolling ()
@@ -35,20 +36,14 @@
 
 ;; Window
 (global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "C-x w") 'fm/enlarge-window)
-
-;; Rebinding arrow keys for fast window switch
-(global-set-key (kbd "<up>") 'windmove-up)
-(global-set-key (kbd "<down>") 'windmove-down)
-(global-set-key (kbd "<left>") 'windmove-left)
-(global-set-key (kbd "<right>") 'windmove-right)
+(global-set-key (kbd "C-x w") #'fm/enlarge-window)
 
 
 ;; Text editing
 (global-set-key (kbd "C-<return>") (kbd "C-e C-m"))
 
-(global-set-key (kbd "C-,") 'fm/copy-line)
-(global-set-key (kbd "C-.") 'fm/duplicate-line)
+(global-set-key (kbd "C-,") #'fm/copy-line)
+(global-set-key (kbd "C-.") #'fm/duplicate-line)
 
 (global-set-key (kbd "C-c o") 'overwrite-mode)
 
@@ -62,8 +57,18 @@
 (global-set-key (kbd "C-c M-x") 'execute-extended-command)
 
 
-;; Consult: Search and navigation
-;; TODO
+;; Consult: Search and navigation with live preview
+(global-set-key (kbd "C-c p m") 'consult-imenu)
+(global-set-key (kbd "C-c p o") 'consult-outline)
+(global-set-key (kbd "C-c p b") 'consult-buffer)
+(global-set-key (kbd "C-c p p") 'consult-project-buffer)
+(global-set-key (kbd "C-c p y") 'consult-yank-from-kill-ring)
+
+(global-set-key (kbd "C-c p g") 'consult-yank-from-kill-ring)
+
+;; Use M-g M-* prefix for goto-* and search functions
+(global-set-key (kbd "M-g M-l") 'consult-goto-line)
+(global-set-key (kbd "M-g M-s") 'consult-line)
 
 
 ;; Workspaces
@@ -91,10 +96,7 @@
 ;; Jump to things in Emacs tree-style
 (fm/require 'avy)
 (global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-\"") 'avy-goto-char-2)
 (global-set-key (kbd "M-g l") 'avy-goto-line)
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-(global-set-key (kbd "M-g a") 'avy-goto-word-0)
 (setq avy-highlight-first t)
 
 

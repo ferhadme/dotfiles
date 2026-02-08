@@ -24,12 +24,12 @@
     (c-toggle-comment-style -1)
     (fm/tab-width-config)))
 
-(add-hook 'go-mode-hook 'fm/tab-width-config)
-(add-hook 'makefile-mode-hook 'fm/tab-width-config)
-(add-hook 'conf-mode-hook 'fm/tab-width-config)
-(add-hook 'rust-mode-hook 'fm/tab-width-config)
-(add-hook 'perl-mode-hook 'fm/tab-width-config)
-(add-hook 'js-mode-hook 'fm/tab-width-config)
+(add-hook 'go-mode-hook #'fm/tab-width-config)
+(add-hook 'makefile-mode-hook #'fm/tab-width-config)
+(add-hook 'conf-mode-hook #'fm/tab-width-config)
+(add-hook 'rust-mode-hook #'fm/tab-width-config)
+(add-hook 'perl-mode-hook #'fm/tab-width-config)
+(add-hook 'js-mode-hook #'fm/tab-width-config)
 
 
 ;; Scheme mode for Racket files
