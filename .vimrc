@@ -46,6 +46,7 @@ nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>bD :bufdo bd<cr>
+nnoremap <leader>bc :enew<cr>
 
 " Windows
 nnoremap <leader>c :close<cr>
