@@ -38,6 +38,8 @@ bison-ascii
           ("Current day" (org-agenda nil "a") "a")
           ("Todo" (org-agenda nil "t") "t"))
          ("Source"
+           ("Home" (dired "~/") "H")
+           ("Org" (dired "~/Documents/org/") "O")
            ("Programming" (dired "~/Programming/") "P")
            ("Configuration" (dired "~/dotfiles/") "C")
            ("Temp" (dired "~/Temp/") "T"))))))

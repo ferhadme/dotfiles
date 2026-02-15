@@ -1,39 +1,27 @@
 ;;; fm-lang.el --- General coding and language specific configurations  -*- lexical-binding: t; -*-
 
-;; Replace tabs with spaces
+;; Replace tabs with spaces everywhere
 (setq-default indent-tabs-mode nil)
+
+;; In case of some file contains tab, indent it with 4 by default
 (setq-default tab-width 4)
 
-;; Tab width configuration for C like languages
-(defun fm/tab-width-config ()
-  (setq c-basic-offset 4
-    tab-width 4
-    indent-tabs-mode nil))
+;; CC-mode offset
+(setq-default c-basic-offset 4)
 
-;; Emacs lisp
-(add-hook 'emacs-lisp-mode-hook
-  (lambda ()
-    (setq tab-width 4)
-    (setq indent-tabs-mode nil)
-    (setq lisp-indent-offset 2)))
-
-;; C
+;; Use block comments over line ones
 (add-hook 'c-mode-hook
   (lambda ()
-    (interactive)
-    (c-toggle-comment-style -1)
-    (fm/tab-width-config)))
+    (c-toggle-comment-style 1)))
 
-(add-hook 'go-mode-hook #'fm/tab-width-config)
-(add-hook 'makefile-mode-hook #'fm/tab-width-config)
-(add-hook 'conf-mode-hook #'fm/tab-width-config)
-(add-hook 'rust-mode-hook #'fm/tab-width-config)
-(add-hook 'perl-mode-hook #'fm/tab-width-config)
-(add-hook 'js-mode-hook #'fm/tab-width-config)
+;; Emacs Lisp indentation
+(setq-default lisp-indent-offset 2)
 
+;; 2 space width for html and css modes
+(setq-default css-indent-offset 2)
+(setq-default sgml-basic-offset 2)
 
 ;; Scheme mode for Racket files
 (add-to-list 'auto-mode-alist '("\\.rkt\\'" . scheme-mode))
-
 
 (provide 'fm-lang)

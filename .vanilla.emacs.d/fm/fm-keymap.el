@@ -58,13 +58,11 @@
 
 
 ;; Consult: Search and navigation with live preview
+(global-set-key (kbd "C-c b") 'consult-buffer)
+(global-set-key (kbd "C-c p b") 'consult-project-buffer)
 (global-set-key (kbd "C-c p m") 'consult-imenu)
 (global-set-key (kbd "C-c p o") 'consult-outline)
-(global-set-key (kbd "C-c p b") 'consult-buffer)
-(global-set-key (kbd "C-c p p") 'consult-project-buffer)
 (global-set-key (kbd "C-c p y") 'consult-yank-from-kill-ring)
-
-(global-set-key (kbd "C-c p g") 'consult-yank-from-kill-ring)
 
 ;; Use M-g M-* prefix for goto-* and search functions
 (global-set-key (kbd "M-g M-l") 'consult-goto-line)
@@ -73,6 +71,7 @@
 
 ;; Workspaces
 (global-set-key (kbd "C-c w p") (lambda () (interactive) (find-file "~/Programming/")))
+(global-set-key (kbd "C-c w h") (lambda () (interactive) (find-file "~/")))
 (global-set-key (kbd "C-c w o") (lambda () (interactive) (find-file "~/Documents/Org/")))
 (global-set-key (kbd "C-c w c") (lambda () (interactive) (find-file "~/dotfiles/")))
 
