@@ -57,6 +57,9 @@ export TERMINAL=alacritty
 export JAVA_HOME=$PATH:/opt/amazon-corretto-21/
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$HOME/.local/bin
+
+export GO_HOME=$PATH:/opt/go/
+export PATH=$PATH:$GO_HOME/bin
 ### PATH_End
 
 

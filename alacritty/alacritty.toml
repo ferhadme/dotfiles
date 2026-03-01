@@ -31,3 +31,4 @@ hide_when_typing = true
 
 [font]
 normal = { family = "Fira Mono" }
+size = 9
