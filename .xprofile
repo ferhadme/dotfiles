@@ -1,1 +1,1 @@
-[ -f ~/dotfiles/.Xmodmap ] && xmodmap ~/dotfiles/.Xmodmap
+~/dotfiles/scripts/xmodmap_start.sh

@@ -260,7 +260,7 @@ bindcode $mod+49 mode "$keyboard_layout"
 exec --no-startup-id feh --bg-scale ~/Pictures/wallhaven-blade-runner.png
 
 # Start custom .Xmodmap script, which swaps Caps lock and R Ctrl keys
-exec --no-startup-id xmodmap ~/dotfiles/.Xmodmap
+exec --no-startup-id ~/dotfiles/scripts/xmodmap_start.sh
 
 # Start picom compositor. By default picom loads ~/.config/picom/picom.conf
 # which is symlinked by ../picom/picom.conf
